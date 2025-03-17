@@ -1,0 +1,69 @@
+CRITICAL - 2022-08-18 14:48:17 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 288.
+ 1 APPPATH\Controllers\Parkir.php(288): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 288, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-18 15:08:53 --> Undefined index: user
+in APPPATH\Controllers\Parkir.php on line 39.
+ 1 APPPATH\Controllers\Parkir.php(39): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user', 'APPPATH\\Controllers\\Parkir.php', 39, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->index()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-18 15:09:21 --> Argument 1 passed to CodeIgniter\BaseModel::doProtectFields() must be of the type array, string given, called in D:\_PHP CODEIGNITER\e-parking\vendor\codeigniter4\framework\system\BaseModel.php on line 799
+in SYSTEMPATH\BaseModel.php on line 1131.
+ 1 SYSTEMPATH\BaseModel.php(799): CodeIgniter\BaseModel->doProtectFields('satpam@akastra.id')
+ 2 APPPATH\Controllers\Parkir.php(40): CodeIgniter\BaseModel->insertBatch([...])
+ 3 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->index()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-18 15:10:35 --> Unknown column 'user="satpam@akastra.id"' in 'field list'
+CRITICAL - 2022-08-18 15:10:35 --> Unknown column 'user="satpam@akastra.id"' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `grup`, `position`, `model_code`, `others`, `license_plate`, `category`, `status`, `lokasi`, `jenis_parkir`, `user="satpam@akastra`.`id"`
+FROM `tb_parking`
+WHERE `created_at` = \'2022-08-17\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `grup`, `position`, `model_code`, `others`, `license_plate`, `category`, `status`, `lokasi`, `jenis_parkir`, `user="satpam@akastra`.`id"`
+FROM `tb_parking`
+WHERE `created_at` = \'2022-08-17\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `grup`, `position`, `model_code`, `others`, `license_plate`, `category`, `status`, `lokasi`, `jenis_parkir`, `user="satpam@akastra`.`id"`
+FROM `tb_parking`
+WHERE `created_at` = \'2022-08-17\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `grup`, `position`, `model_code`, `others`, `license_plate`, `category`, `status`, `lokasi`, `jenis_parkir`, `user="satpam@akastra`.`id"`
+FROM `tb_parking`
+WHERE `created_at` = :created_at:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Parkir.php(29): CodeIgniter\Model->__call('get', [])
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->index()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-18 15:11:23 --> Unknown column 'user="satpam@akastra.id"' in 'field list'
+CRITICAL - 2022-08-18 15:11:23 --> Unknown column 'user="satpam@akastra.id"' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `grup`, `position`, `model_code`, `others`, `license_plate`, `category`, `status`, `lokasi`, `jenis_parkir`, `user="satpam@akastra`.`id"`
+FROM `tb_parking`
+WHERE `created_at` = \'2022-08-17\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `grup`, `position`, `model_code`, `others`, `license_plate`, `category`, `status`, `lokasi`, `jenis_parkir`, `user="satpam@akastra`.`id"`
+FROM `tb_parking`
+WHERE `created_at` = \'2022-08-17\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `grup`, `position`, `model_code`, `others`, `license_plate`, `category`, `status`, `lokasi`, `jenis_parkir`, `user="satpam@akastra`.`id"`
+FROM `tb_parking`
+WHERE `created_at` = \'2022-08-17\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `grup`, `position`, `model_code`, `others`, `license_plate`, `category`, `status`, `lokasi`, `jenis_parkir`, `user="satpam@akastra`.`id"`
+FROM `tb_parking`
+WHERE `created_at` = :created_at:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Parkir.php(29): CodeIgniter\Model->__call('get', [])
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->index()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

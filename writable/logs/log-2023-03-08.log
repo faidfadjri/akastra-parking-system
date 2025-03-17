@@ -1,0 +1,12 @@
+ERROR - 2023-03-08 18:01:12 --> Error connecting to the database: Can't connect to local server through socket '/var/lib/mysql/mysql.sock' (2)
+CRITICAL - 2023-03-08 18:01:12 --> Unable to connect to the database.
+Main connection [MySQLi]: Can't connect to local server through socket '/var/lib/mysql/mysql.sock' (2)
+in SYSTEMPATH/Database/BaseConnection.php on line 416.
+ 1 SYSTEMPATH/Database/BaseConnection.php(586): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query()
+ 3 APPPATH/Models/ParkirModel.php(45): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH/Controllers/Parkir.php(333): App\Models\ParkirModel->_getParkirDetail()
+ 5 SYSTEMPATH/CodeIgniter.php(898): App\Controllers\Parkir->get_detail()
+ 6 SYSTEMPATH/CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()

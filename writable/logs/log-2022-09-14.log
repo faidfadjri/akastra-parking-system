@@ -1,0 +1,149 @@
+CRITICAL - 2022-09-14 08:26:18 --> Undefined variable $exist
+in APPPATH\Views\pages\main.php on line 37.
+ 1 APPPATH\Views\pages\main.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $exist', 'APPPATH\\Views\\pages\\main.php', 37)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\main.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/main', [], true)
+ 5 APPPATH\Controllers\Parkir.php(90): view('pages/main', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
+ 7 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-14 08:26:25 --> Undefined variable $exist
+in APPPATH\Views\pages\main.php on line 37.
+ 1 APPPATH\Views\pages\main.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $exist', 'APPPATH\\Views\\pages\\main.php', 37)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\main.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/main', [], true)
+ 5 APPPATH\Controllers\Parkir.php(90): view('pages/main', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
+ 7 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-14 08:27:24 --> Undefined variable $parkirExist
+in APPPATH\Controllers\Parkir.php on line 39.
+ 1 APPPATH\Controllers\Parkir.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $parkirExist', 'APPPATH\\Controllers\\Parkir.php', 39)
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
+ 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-14 08:29:40 --> Undefined variable $prevDateParkirExist
+in APPPATH\Controllers\Parkir.php on line 49.
+ 1 APPPATH\Controllers\Parkir.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $prevDateParkirExist', 'APPPATH\\Controllers\\Parkir.php', 49)
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
+ 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-14 08:42:22 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::toArray()
+in APPPATH\Controllers\Parkir.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-14 08:42:23 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::toArray()
+in APPPATH\Controllers\Parkir.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-14 08:42:24 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::toArray()
+in APPPATH\Controllers\Parkir.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-14 08:46:45 --> CodeIgniter\Database\BaseResult::getFirstRow(): Argument #1 ($type) must be of type string, null given, called in D:\_PHP CODEIGNITER\e-parking\vendor\codeigniter4\framework\system\Model.php on line 249
+in SYSTEMPATH\Database\BaseResult.php on line 375.
+ 1 SYSTEMPATH\Model.php(249): CodeIgniter\Database\BaseResult->getFirstRow(null)
+ 2 SYSTEMPATH\BaseModel.php(622): CodeIgniter\Model->doFirst()
+ 3 APPPATH\Controllers\Parkir.php(36): CodeIgniter\BaseModel->first()
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
+ 5 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-14 08:46:53 --> Call to undefined method App\Models\ParkirModel::getFirstRow
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Parkir.php(36): CodeIgniter\Model->__call('getFirstRow', [])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
+ 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-14 08:51:40 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Parkir.php on line 36.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-14 08:51:47 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Parkir.php on line 36.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-09-14 08:52:04 --> Unknown column 'date' in 'where clause'
+CRITICAL - 2022-09-14 08:52:04 --> Unknown column 'date' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tb_parking`
+WHERE `date` = \'2022-09-13\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tb_parking`
+WHERE `date` = \'2022-09-13\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tb_parking`
+WHERE `date` = \'2022-09-13\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tb_parking`
+WHERE `date` = :date:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Parkir.php(37): CodeIgniter\Model->__call('get', [])
+ 7 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
+ 8 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-14 09:10:00 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Parkir.php on line 79.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-14 09:12:39 --> Attempt to read property "user" on null
+in APPPATH\Controllers\Parkir.php on line 79.
+ 1 APPPATH\Controllers\Parkir.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "user" on null', 'APPPATH\\Controllers\\Parkir.php', 79)
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
+ 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-14 09:13:37 --> Undefined variable $GRSummary
+in APPPATH\Controllers\Parkir.php on line 87.
+ 1 APPPATH\Controllers\Parkir.php(87): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $GRSummary', 'APPPATH\\Controllers\\Parkir.php', 87)
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
+ 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-14 09:14:33 --> Object of class stdClass could not be converted to string
+in APPPATH\Views\pages\main.php on line 54.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/main', [], true)
+ 4 APPPATH\Controllers\Parkir.php(93): view('pages/main', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
+ 6 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

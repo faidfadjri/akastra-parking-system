@@ -1,0 +1,250 @@
+CRITICAL - 2022-08-12 01:34:46 --> Undefined offset: 0
+in APPPATH\Views\pages\depan.php on line 114.
+ 1 APPPATH\Views\pages\depan.php(114): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 0', 'APPPATH\\Views\\pages\\depan.php', 114, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\depan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/depan', [], true)
+ 5 APPPATH\Controllers\Parkir.php(75): view('pages/depan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->depan()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 01:35:24 --> Undefined offset: 0
+in APPPATH\Views\pages\depan.php on line 86.
+ 1 APPPATH\Views\pages\depan.php(86): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 0', 'APPPATH\\Views\\pages\\depan.php', 86, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\depan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/depan', [], true)
+ 5 APPPATH\Controllers\Parkir.php(75): view('pages/depan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->depan()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 01:35:36 --> Undefined offset: 0
+in APPPATH\Views\pages\depan.php on line 114.
+ 1 APPPATH\Views\pages\depan.php(114): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 0', 'APPPATH\\Views\\pages\\depan.php', 114, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\depan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/depan', [], true)
+ 5 APPPATH\Controllers\Parkir.php(75): view('pages/depan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->depan()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 01:35:52 --> Undefined offset: 0
+in APPPATH\Views\pages\depan.php on line 113.
+ 1 APPPATH\Views\pages\depan.php(113): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 0', 'APPPATH\\Views\\pages\\depan.php', 113, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\depan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/depan', [], true)
+ 5 APPPATH\Controllers\Parkir.php(75): view('pages/depan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->depan()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 01:35:53 --> Undefined offset: 0
+in APPPATH\Views\pages\depan.php on line 113.
+ 1 APPPATH\Views\pages\depan.php(113): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 0', 'APPPATH\\Views\\pages\\depan.php', 113, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\depan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/depan', [], true)
+ 5 APPPATH\Controllers\Parkir.php(75): view('pages/depan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->depan()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 04:08:26 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 235.
+ 1 APPPATH\Controllers\Parkir.php(235): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 235, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 04:08:36 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 235.
+ 1 APPPATH\Controllers\Parkir.php(235): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 235, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 04:18:29 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 235.
+ 1 APPPATH\Controllers\Parkir.php(235): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 235, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 04:18:31 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 235.
+ 1 APPPATH\Controllers\Parkir.php(235): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 235, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 04:18:33 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 235.
+ 1 APPPATH\Controllers\Parkir.php(235): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 235, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 20:06:37 --> syntax error, unexpected '='
+in APPPATH\Views\pages\depan.php on line 181.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/depan', [], true)
+ 3 APPPATH\Controllers\Parkir.php(75): view('pages/depan', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->depan()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 20:08:40 --> Invalid file: pages/stall_gr.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/stall_gr.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/stall_gr', [], true)
+ 3 APPPATH\Controllers\Parkir.php(138): view('pages/stall_gr', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->stall_gr()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 20:41:22 --> Cannot use [] for reading
+in APPPATH\Views\pages\gr.php on line 46.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-08-12 20:41:28 --> Undefined offset: 16
+in APPPATH\Views\pages\gr.php on line 46.
+ 1 APPPATH\Views\pages\gr.php(46): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 16', 'APPPATH\\Views\\pages\\gr.php', 46, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\gr.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/gr', [], true)
+ 5 APPPATH\Controllers\Parkir.php(142): view('pages/gr', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->stall_gr()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 20:45:03 --> Maximum execution time of 60 seconds exceeded
+in APPPATH\Views\pages\gr.php on line 63.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-08-12 20:52:03 --> Undefined variable: grupG
+in APPPATH\Views\pages\gr.php on line 52.
+ 1 APPPATH\Views\pages\gr.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: grupG', 'APPPATH\\Views\\pages\\gr.php', 52, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\gr.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/gr', [], true)
+ 5 APPPATH\Controllers\Parkir.php(143): view('pages/gr', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->stall_gr()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 20:57:10 --> Undefined variable: position
+in APPPATH\Views\pages\gr.php on line 56.
+ 1 APPPATH\Views\pages\gr.php(56): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: position', 'APPPATH\\Views\\pages\\gr.php', 56, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\gr.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/gr', [], true)
+ 5 APPPATH\Controllers\Parkir.php(141): view('pages/gr', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->stall_gr()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 21:15:45 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 238.
+ 1 APPPATH\Controllers\Parkir.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 238, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 21:15:48 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 238.
+ 1 APPPATH\Controllers\Parkir.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 238, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 21:15:51 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 238.
+ 1 APPPATH\Controllers\Parkir.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 238, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 21:15:53 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 238.
+ 1 APPPATH\Controllers\Parkir.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 238, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 21:15:54 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 238.
+ 1 APPPATH\Controllers\Parkir.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 238, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 21:16:31 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 238.
+ 1 APPPATH\Controllers\Parkir.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 238, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 21:23:37 --> Invalid file: pages/stall_bp.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/stall_bp.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/stall_bp', [], true)
+ 3 APPPATH\Controllers\Parkir.php(111): view('pages/stall_bp', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->stall_bp()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 21:24:37 --> Invalid file: pages/stall_bp.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/stall_bp.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/stall_bp', [], true)
+ 3 APPPATH\Controllers\Parkir.php(111): view('pages/stall_bp', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->stall_bp()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 23:13:23 --> Undefined variable: grupO
+in APPPATH\Controllers\Parkir.php on line 119.
+ 1 APPPATH\Controllers\Parkir.php(119): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: grupO', 'APPPATH\\Controllers\\Parkir.php', 119, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->stall_bp()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-12 23:26:39 --> Undefined variable: controller
+in APPPATH\Views\pages\bp.php on line 76.
+ 1 APPPATH\Views\pages\bp.php(76): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: controller', 'APPPATH\\Views\\pages\\bp.php', 76, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\bp.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/bp', [], true)
+ 5 APPPATH\Controllers\Parkir.php(124): view('pages/bp', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->stall_bp()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

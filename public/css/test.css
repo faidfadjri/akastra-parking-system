@@ -1,0 +1,26 @@
+.drag-drop {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.color1 {
+    background-color: grey;
+}
+
+.color2 {
+    background-color: rebeccapurple;
+}
+
+.drop {
+    background-color: transparent;
+    border: 2px dashed grey;
+}
+
+.container {
+    display: flex;
+    column-gap: 10px;
+    padding: 20px;
+}

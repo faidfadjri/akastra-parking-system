@@ -1,0 +1,122 @@
+CRITICAL - 2022-08-09 02:39:39 --> Undefined variable: lokasi
+in APPPATH\Views\templates\app.php on line 12.
+ 1 APPPATH\Views\templates\app.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: lokasi', 'APPPATH\\Views\\templates\\app.php', 12, [])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\templates\\app.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('templates/app', [], true)
+ 5 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/login', [], true)
+ 6 APPPATH\Controllers\Parkir.php(123): view('pages/login')
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->login()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-09 03:00:55 --> Call to a member function get() on array
+in APPPATH\Controllers\Parkir.php on line 122.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->login()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-09 03:01:37 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 206.
+ 1 APPPATH\Controllers\Parkir.php(206): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 206, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-09 19:43:55 --> Trying to access array offset on value of type null
+in APPPATH\Filters\Auth.php on line 29.
+ 1 APPPATH\Filters\Auth.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Filters\\Auth.php', 29, [...])
+ 2 SYSTEMPATH\Filters\Filters.php(173): App\Filters\Auth->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 3 SYSTEMPATH\CodeIgniter.php(440): CodeIgniter\Filters\Filters->run('D:\\', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-09 19:43:56 --> Trying to access array offset on value of type null
+in APPPATH\Filters\Auth.php on line 29.
+ 1 APPPATH\Filters\Auth.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Filters\\Auth.php', 29, [...])
+ 2 SYSTEMPATH\Filters\Filters.php(173): App\Filters\Auth->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 3 SYSTEMPATH\CodeIgniter.php(440): CodeIgniter\Filters\Filters->run('D:\\', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-09 19:49:51 --> Undefined variable: vehicle
+in APPPATH\Views\pages\main.php on line 22.
+ 1 APPPATH\Views\pages\main.php(22): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: vehicle', 'APPPATH\\Views\\pages\\main.php', 22, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\main.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/main', [], true)
+ 5 APPPATH\Controllers\Parkir.php(28): view('pages/main', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-09 20:11:04 --> Undefined index: parkir_depan
+in APPPATH\Views\pages\main.php on line 17.
+ 1 APPPATH\Views\pages\main.php(17): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: parkir_depan', 'APPPATH\\Views\\pages\\main.php', 17, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\main.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/main', [], true)
+ 5 APPPATH\Controllers\Parkir.php(43): view('pages/main', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-09 20:12:10 --> Undefined index: parkir_depan
+in APPPATH\Views\pages\main.php on line 17.
+ 1 APPPATH\Views\pages\main.php(17): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: parkir_depan', 'APPPATH\\Views\\pages\\main.php', 17, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\main.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/main', [], true)
+ 5 APPPATH\Controllers\Parkir.php(53): view('pages/main', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-09 20:12:27 --> Undefined index: parkir_depan
+in APPPATH\Views\pages\main.php on line 18.
+ 1 APPPATH\Views\pages\main.php(18): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: parkir_depan', 'APPPATH\\Views\\pages\\main.php', 18, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\main.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/main', [], true)
+ 5 APPPATH\Controllers\Parkir.php(53): view('pages/main', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-09 20:15:08 --> Undefined index: parkir_depan
+in APPPATH\Views\pages\main.php on line 34.
+ 1 APPPATH\Views\pages\main.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: parkir_depan', 'APPPATH\\Views\\pages\\main.php', 34, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\main.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/main', [], true)
+ 5 APPPATH\Controllers\Parkir.php(41): view('pages/main', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-09 20:16:34 --> syntax error, unexpected 'if' (T_IF), expecting ':'
+in APPPATH\Views\pages\main.php on line 36.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/main', [], true)
+ 3 APPPATH\Controllers\Parkir.php(41): view('pages/main', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-09 20:23:41 --> Undefined index: pekerjaan
+in APPPATH\Controllers\Parkir.php on line 241.
+ 1 APPPATH\Controllers\Parkir.php(241): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: pekerjaan', 'APPPATH\\Controllers\\Parkir.php', 241, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->tambah_parkir()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

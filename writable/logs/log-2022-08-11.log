@@ -1,0 +1,93 @@
+CRITICAL - 2022-08-11 20:47:31 --> Maximum execution time of 60 seconds exceeded
+in APPPATH\Views\pages\depan.php on line 103.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-08-11 20:48:31 --> Maximum execution time of 60 seconds exceeded
+in APPPATH\Views\pages\depan.php on line 103.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-08-11 20:50:13 --> Maximum execution time of 60 seconds exceeded
+in APPPATH\Views\pages\depan.php on line 103.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-08-11 21:00:22 --> rand() expects exactly 2 parameters, 1 given
+in APPPATH\Views\pages\depan.php on line 105.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rand() expects exactly 2 parameters, 1 given', 'APPPATH\\Views\\pages\\depan.php', 105, [...])
+ 2 APPPATH\Views\pages\depan.php(105): rand(1660269622)
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\depan.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/depan', [], true)
+ 6 APPPATH\Controllers\Parkir.php(75): view('pages/depan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->depan()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-11 21:40:30 --> Undefined index: category 
+in APPPATH\Views\pages\depan.php on line 62.
+ 1 APPPATH\Views\pages\depan.php(62): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: category ', 'APPPATH\\Views\\pages\\depan.php', 62, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\depan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/depan', [], true)
+ 5 APPPATH\Controllers\Parkir.php(75): view('pages/depan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->depan()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-11 21:40:52 --> Undefined index: category 
+in APPPATH\Views\pages\depan.php on line 62.
+ 1 APPPATH\Views\pages\depan.php(62): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: category ', 'APPPATH\\Views\\pages\\depan.php', 62, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\depan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/depan', [], true)
+ 5 APPPATH\Controllers\Parkir.php(75): view('pages/depan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->depan()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-11 21:40:53 --> Undefined index: category 
+in APPPATH\Views\pages\depan.php on line 62.
+ 1 APPPATH\Views\pages\depan.php(62): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: category ', 'APPPATH\\Views\\pages\\depan.php', 62, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\depan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/depan', [], true)
+ 5 APPPATH\Controllers\Parkir.php(75): view('pages/depan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->depan()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-11 21:40:57 --> Undefined index: category 
+in APPPATH\Views\pages\depan.php on line 62.
+ 1 APPPATH\Views\pages\depan.php(62): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: category ', 'APPPATH\\Views\\pages\\depan.php', 62, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\depan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/depan', [], true)
+ 5 APPPATH\Controllers\Parkir.php(75): view('pages/depan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->depan()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-11 22:00:01 --> Undefined variable: o
+in APPPATH\Views\pages\depan.php on line 158.
+ 1 APPPATH\Views\pages\depan.php(158): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: o', 'APPPATH\\Views\\pages\\depan.php', 158, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\depan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/depan', [], true)
+ 5 APPPATH\Controllers\Parkir.php(75): view('pages/depan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->depan()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-11 22:53:46 --> There is no data to insert.
+in SYSTEMPATH\BaseModel.php on line 718.
+ 1 SYSTEMPATH\BaseModel.php(718): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH\Model.php(666): CodeIgniter\BaseModel->insert([], false)
+ 3 SYSTEMPATH\BaseModel.php(658): CodeIgniter\Model->insert([...], false)
+ 4 APPPATH\Controllers\Parkir.php(239): CodeIgniter\BaseModel->save([...])
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Parkir->tambah_parkir()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

@@ -1,0 +1,40 @@
+CRITICAL - 2024-05-14 23:02:19 --> Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+in SYSTEMPATH/Database/Database.php on line 136.
+ 1 SYSTEMPATH/Database/Database.php(56): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(78): CodeIgniter\Database\Database->load()
+ 3 APPPATH/Models/ParkirModel.php(16): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Parkir.php(46): App\Models\ParkirModel->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(860): App\Controllers\Parkir->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(459): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-14 23:02:20 --> Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+in SYSTEMPATH/Database/Database.php on line 136.
+ 1 SYSTEMPATH/Database/Database.php(56): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(78): CodeIgniter\Database\Database->load()
+ 3 APPPATH/Models/ParkirModel.php(16): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Parkir.php(46): App\Models\ParkirModel->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(860): App\Controllers\Parkir->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(459): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-14 23:32:07 --> Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+in SYSTEMPATH/Database/Database.php on line 136.
+ 1 SYSTEMPATH/Database/Database.php(56): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(78): CodeIgniter\Database\Database->load()
+ 3 APPPATH/Models/ParkirModel.php(16): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Parkir.php(46): App\Models\ParkirModel->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(860): App\Controllers\Parkir->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(459): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-14 23:32:07 --> Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+in SYSTEMPATH/Database/Database.php on line 136.
+ 1 SYSTEMPATH/Database/Database.php(56): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(78): CodeIgniter\Database\Database->load()
+ 3 APPPATH/Models/ParkirModel.php(16): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Parkir.php(46): App\Models\ParkirModel->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(860): App\Controllers\Parkir->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(459): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
