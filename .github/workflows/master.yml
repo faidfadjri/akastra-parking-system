@@ -19,8 +19,8 @@ jobs:
           key: ${{ secrets.PARKING_PRIVATE_KEY }}
           port: ${{ secrets.PARKING_SSH_PORT }}
           script: |
-            mkdir -p ~/1.0.0
-            cd ~/1.0.0
+            mkdir -p ~/akastra/1.0.0
+            cd ~/akastra/1.0.0
 
             if [ -d ".git" ]; then
               echo "Repository exists, pulling latest changes.."
