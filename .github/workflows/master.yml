@@ -1,0 +1,32 @@
+name: Akastra Parking Deployment
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: 📂 Pulling files
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.QONTAK_HOST }}
+          username: ${{ secrets.QONTAK_USERNAME }}
+          key: ${{ secrets.QONTAK_PRIVATE_KEY }}
+          port: ${{ secrets.QONTAK_SSH_PORT }}
+          script: |
+            mkdir -p ~/1.0.0
+            cd ~/1.0.0
+
+            if [ -d ".git" ]; then
+              echo "Repository exists, pulling latest changes.."
+              git reset --hard origin/master
+              git pull origin master
+            else
+              echo "Repository does not exist, cloning.."
+              git clone git@github.com:faidfadjri/akastra-parking-system.git .
+            fi
