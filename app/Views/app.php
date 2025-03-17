@@ -7,9 +7,9 @@
     <title>PARKIR | <?= $lokasi; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
-   <link rel="shortcut icon" 
-href="https://akastra.id/assets/images/icon/logoapp.png" 
-type="image/x-icon">
+    <link rel="shortcut icon"
+        href="/assets/logo.webp"
+        type="image/x-icon">
 
     <!-- Material Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
