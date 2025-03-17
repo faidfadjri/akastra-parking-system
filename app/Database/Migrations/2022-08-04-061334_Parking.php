@@ -50,40 +50,6 @@ class Parking extends Migration
 
         $this->forge->addKey('id', true);
         $this->forge->createTable('tb_grup_parking');
-
-
-        # Buat table tb_parking
-        $this->forge->addField([
-            'id' => [
-                'type'           => 'INT',
-                'constraint'     => 5,
-                'unsigned'       => true,
-                'auto_increment' => true,
-            ],
-            'grup' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'position' => [
-                'type'          => 'INT',
-                'constraint'    => '255'
-            ],
-            'model_code' => [
-                'type'          => 'VARCHAR',
-                'constraint'    => '255'
-            ],
-            'license_plate' => [
-                'type'          => 'VARCHAR',
-                'constraint'    => '255'
-            ],
-            'status' => array(
-                'type' => "ENUM('','Menunggu Perbaikan','Menunggu Sparepart','Proses Pengerjaan', 'Menunggu Pengambilan', 'Menunggu Driver')",
-                'default' => '',
-                'null' => true,
-            ),
-        ]);
-        $this->forge->addKey('id', true);
-        $this->forge->createTable('tb_parking');
     }
 
     public function down()
