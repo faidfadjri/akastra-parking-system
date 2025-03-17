@@ -1,63 +1,77 @@
-# CodeIgniter 4 Application Starter
+![Alt text](https://akastra.id/assets/images/article/d3841a529cdd7462c0c0f4f7b4bc35fe.jpg?raw=true "Title")
 
-## What is CodeIgniter?
+# **E Parking Akastra**
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](http://codeigniter.com).
+Akastra Toyota adalah sebuah bengkel resmi toyota di kawasan Jalan Raya Kebayoran Lama, Jl. Palmerah Barat VII No.26, RT.1/RW.2, North Sukabumi, Kebonjeruk, Jakarta.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Akastra Toyota merupakan satu satunya bengkel resmi toyota yang hanya mengandalkan **After Sales** artinya **Tidak ada Penjualan**.
 
-More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
+Akastra mempunyai permasalahan dari sisi area parkir kendaraan yang crowded. Oleh Karena itu salah satu improvement yang dilakukan adalah membangun sistem e parking yang mana sistem ini nantinya akan digunakan oleh security untuk memonitoring kendaraan di area parkir.
 
-The user guide corresponding to this version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+## Framework & Library
 
-## Installation & updates
+Framework ini dibangun dengan `Codeigniter 4`, `Bootstrap 5` dan `JQuery`
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## Requirement
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+| Tools      | Type    | Description               |
+| :--------- | :------ | :------------------------ |
+| `DATABASE` | `MySQL` | Laragon or Xampp or Lampp |
+| `PHP`      | `8.1.0` | > 7.4                     |
 
-## Setup
+## Installation in local
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+Buat Database dengan nama _parkir_
 
-## Important Change with index.php
+Install _composer package_
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+```bash
+composer install
+```
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+_Table_ Migration
 
-**Please** read the user guide for a better explanation of how CI4 works!
+```bash
+php spark migrate
+```
 
-## Repository Management
+User Seeding
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+```bash
+php spark db:seed UserSeeder
+```
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+Vehicle Model Seeding
 
-## Server Requirements
+```bash
+php spark db:seed Model
+```
 
-PHP version 7.4 or higher is required, with the following extensions installed:
+Parking Capacity Seeding
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+```bash
+php spark db:seed Capacity
+```
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+Default Account
 
-- json (enabled by default - don't turn it off)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)
+```bash
+username : admin
+password : admin
+```
+
+Running Spark
+
+```bash
+php spark serve
+```
+
+Yeay! You read to go 🎉
+
+## Developer
+
+- [Mohamad Faid Fadjri](https://faidfadjri.github.io)
+
+## Feedback
+
+If you have any feedback, please reach out to me at faidfadjri@gmail.com
