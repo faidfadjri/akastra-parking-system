@@ -14,10 +14,10 @@ jobs:
       - name: 📂 Pulling files
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.QONTAK_HOST }}
-          username: ${{ secrets.QONTAK_USERNAME }}
-          key: ${{ secrets.QONTAK_PRIVATE_KEY }}
-          port: ${{ secrets.QONTAK_SSH_PORT }}
+          host: ${{ secrets.PARKING_HOST }}
+          username: ${{ secrets.PARKING_USERNAME }}
+          key: ${{ secrets.PARKING_PRIVATE_KEY }}
+          port: ${{ secrets.PARKING_SSH_PORT }}
           script: |
             mkdir -p ~/1.0.0
             cd ~/1.0.0
