@@ -9,21 +9,21 @@ class User extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id' => [
+            'id'    => [
                 'type'           => 'INT',
                 'constraint'     => 5,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'email' => [
+            'email'     => [
                 'type'           => 'VARCHAR',
                 'constraint'     => 255,
             ],
-            'password' => [
+            'password'  => [
                 'type'           => 'VARCHAR',
                 'constraint'     => 50,
             ],
-            'role' => [
+            'role'      => [
                 'type' => 'ENUM("editor","viewer")',
                 'default' => 'editor',
                 'null' => FALSE,

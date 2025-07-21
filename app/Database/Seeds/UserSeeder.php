@@ -9,9 +9,9 @@ class UserSeeder extends Seeder
     public function run()
     {
         $data = [
-            'email' => 'admin',
-            'password' => 'admin',
-            'role'     => 'editor'
+            'email'     => 'admin',
+            'password'  => 'admin',
+            'role'      => 'editor'
         ];
         $this->db->table('tb_user')->insert($data);
     }
