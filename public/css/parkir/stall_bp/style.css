@@ -36,7 +36,14 @@ body {
 .main-area {
   min-width: 100%;
   min-height: 100%;
-  position: absolute;
+  position: relative;
+}
+
+.zoom-in-out {
+  position: fixed;
+  top: 9%;
+  right: 6%;
+  z-index: 9999;
 }
 
 /* ----- Parking Seat Styling ----- */
@@ -242,13 +249,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: end;
+  height: fit-content;
 }
 
 .gedung {
   width: 800px;
   height: fit-content;
   align-self: flex-start;
-  margin-left: 170px;
 }
 
 .parkir-wrap {
