@@ -4,7 +4,7 @@ namespace App\Database\Seeds;
 
 use CodeIgniter\Database\Seeder;
 
-class Capacity extends Seeder
+class CapacitySeeder extends Seeder
 {
     public function run()
     {
@@ -51,7 +51,7 @@ class Capacity extends Seeder
             ],
         ];
 
-        foreach($datas as $data){
+        foreach ($datas as $data) {
             $this->db->table('tb_capacity')->insert($data);
         }
     }
