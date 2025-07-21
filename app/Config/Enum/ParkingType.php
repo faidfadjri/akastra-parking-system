@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Config\Static;
+namespace App\Config\Enum;
 
 class ParkingType
 {

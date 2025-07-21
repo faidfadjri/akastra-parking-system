@@ -3,9 +3,9 @@
 namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
-use App\Config\Static\ParkingLocation;
-use App\Config\Static\ParkingType;
-use App\Config\Static\ServiceCategory;
+use App\Config\Enum\ParkingLocation;
+use App\Config\Enum\ParkingType;
+use App\Config\Enum\ServiceCategory;
 
 class ParkingTable extends Migration
 {
