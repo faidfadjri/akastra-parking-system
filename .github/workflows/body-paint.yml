@@ -1,0 +1,33 @@
+name: Akastra Parking Deployment
+on:
+  push:
+    branches:
+      - body-paint
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: 📂 Pulling files
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.PARKING_HOST }}
+          username: ${{ secrets.PARKING_USERNAME }}
+          key: ${{ secrets.PARKING_PRIVATE_KEY }}
+          port: ${{ secrets.PARKING_SSH_PORT }}
+          script: |
+            mkdir -p ~/monitoring-bp/1.0.0
+            cd ~/monitoring-bp/1.0.0
+
+            if [ -d ".git" ]; then
+              echo "Repository exists, pulling latest changes from body-paint.."
+              git fetch origin body-paint
+              git reset --hard origin/body-paint
+              git checkout body-paint
+            else
+              echo "Repository does not exist, cloning body-paint branch.."
+              git clone --branch body-paint git@github.com:faidfadjri/akastra-parking-system.git .
+            fi

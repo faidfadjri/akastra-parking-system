@@ -29,7 +29,7 @@ class ParkingStatus
 
     public static function all(): array
     {
-        return [
+        $statuses = [
             self::WAITING_FOR_HANDOVER,
             self::WAITING_FOR_SPARE_PART,
             self::WAITING_FOR_SPK,
@@ -49,5 +49,11 @@ class ParkingStatus
             self::FINAL_INSPECTION,
             self::READY_FOR_DELIVERY,
         ];
+
+        $statuses = array_map('mb_strtoupper', $statuses);
+
+        sort($statuses, SORT_STRING | SORT_FLAG_CASE);
+
+        return $statuses;
     }
 }

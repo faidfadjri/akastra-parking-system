@@ -8,3 +8,37 @@ in APPPATH\Controllers\BaseController.php on line 51.
  6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
 ERROR - 2025-07-21 01:20:09 --> Unknown column 'lokasi' in 'field list'
 ERROR - 2025-07-21 01:30:45 --> Unknown column 'lokasi' in 'field list'
+CRITICAL - 2025-07-21 13:40:00 --> Undefined variable: statuses
+in APPPATH\Views\items\modal.php on line 41.
+ 1 APPPATH\Views\items\modal.php(41): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: statuses', 'APPPATH\\Views\\items\\modal.php', 41, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\items\\modal.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(429): CodeIgniter\View\View->render('items/modal', null, true)
+ 5 APPPATH\Views\app.php(45): CodeIgniter\View\View->include('items/modal')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\app.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('app', [], true)
+ 9 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/depan', [], true)
+10 APPPATH\Controllers\Parkir.php(147): view('pages/depan', [...])
+11 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->depan()
+12 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+13 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-07-21 13:40:03 --> Undefined variable: statuses
+in APPPATH\Views\items\modal.php on line 41.
+ 1 APPPATH\Views\items\modal.php(41): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: statuses', 'APPPATH\\Views\\items\\modal.php', 41, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\items\\modal.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(429): CodeIgniter\View\View->render('items/modal', null, true)
+ 5 APPPATH\Views\app.php(45): CodeIgniter\View\View->include('items/modal')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\app.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('app', [], true)
+ 9 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/depan', [], true)
+10 APPPATH\Controllers\Parkir.php(147): view('pages/depan', [...])
+11 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->depan()
+12 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+13 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
