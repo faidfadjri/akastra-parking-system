@@ -64,7 +64,6 @@ $routes->group('parkir', ['filter' => 'login'], function ($routes) {
     $routes->post('get_detail', 'Parkir::get_detail');
     $routes->post('search_car', 'Parkir::search_car');
 
-
     $routes->post('update_parkir', 'Parkir::update_parkir');
 });
 
