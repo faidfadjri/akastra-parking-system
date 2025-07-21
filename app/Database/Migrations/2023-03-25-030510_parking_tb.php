@@ -3,6 +3,9 @@
 namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
+use App\Config\Static\ParkingLocation;
+use App\Config\Static\ParkingType;
+use App\Config\Static\ServiceCategory;
 
 class ParkingTable extends Migration
 {
@@ -16,8 +19,8 @@ class ParkingTable extends Migration
                 'auto_increment' => true,
             ],
             'grup' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
+                'type'          => 'VARCHAR',
+                'constraint'    => '255',
             ],
             'position' => [
                 'type'          => 'INT',
@@ -36,7 +39,7 @@ class ParkingTable extends Migration
                 'constraint'    => '255'
             ],
             'category' => [
-                'type'          => 'ENUM("GR", "BP","AKM","none")',
+                'type'          => 'ENUM(' . implode(',', array_map(fn($loc) => '"' . $loc . '"', ServiceCategory::all())) . ')',
                 'default'       => 'none',
                 'null'          => FALSE,
             ],
@@ -45,12 +48,12 @@ class ParkingTable extends Migration
                 'constraint'    => '255'
             ],
             'lokasi' => [
-                'type'          => 'ENUM("DEPAN", "STALL_BP","STALL_GR","AKM")',
+                'type'          => 'ENUM(' . implode(',', array_map(fn($loc) => '"' . $loc . '"', ParkingLocation::all())) . ')',
                 'default'       => 'DEPAN',
                 'null'          => FALSE,
             ],
             'jenis_parkir' => [
-                'type'          => 'ENUM("Parkiran BP","Parkiran GR","Parkiran Bayangan GR","Parkiran Bayangan BP","Stall GR","Stall BP","Parkiran AKM","Parkiran Bayangan AKM")',
+                'type'          => 'ENUM(' . implode(',', array_map(fn($loc) => '"' . $loc . '"', ParkingType::all())) . ')',
                 'default'       => 'Parkiran BP',
                 'null'          => FALSE,
             ],
@@ -72,7 +75,8 @@ class ParkingTable extends Migration
         $this->forge->createTable('tb_parking');
     }
 
-    public function down(){
+    public function down()
+    {
         $this->forge->dropTable('tb_parking');
     }
 }

@@ -10,17 +10,17 @@ class Parking extends Migration
     {
         # Buat table Model Kendaraan
         $this->forge->addField([
-            'id' => [
+            'id'            => [
                 'type'           => 'INT',
                 'constraint'     => 5,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'model' => [
+            'model'         => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'model_code' => [
+            'model_code'    => [
                 'type'          => 'VARCHAR',
                 'constraint'    => '255'
             ],
