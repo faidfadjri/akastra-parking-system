@@ -6,3 +6,5 @@ in APPPATH\Controllers\BaseController.php on line 51.
  4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-07-21 01:20:09 --> Unknown column 'lokasi' in 'field list'
+ERROR - 2025-07-21 01:30:45 --> Unknown column 'lokasi' in 'field list'

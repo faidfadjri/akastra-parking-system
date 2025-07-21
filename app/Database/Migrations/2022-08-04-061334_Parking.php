@@ -42,7 +42,11 @@ class Parking extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'position' => [
+            'lokasi' => [
+                'type'          => 'VARCHAR',
+                'constraint'    => '255'
+            ],
+            'capacity' => [
                 'type'          => 'INT',
                 'constraint'    => '255'
             ],

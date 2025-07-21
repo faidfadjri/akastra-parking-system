@@ -1,0 +1,72 @@
+[
+	{
+		"id": 1,
+		"model": "AVANZA",
+		"model_code": "AV"
+	},
+	{
+		"id": 2,
+		"model": "INNOVA",
+		"model_code": "IV"
+	},
+	{
+		"id": 3,
+		"model": "CAMRY",
+		"model_code": "CM"
+	},
+	{
+		"id": 4,
+		"model": "FORTUNER",
+		"model_code": "FT"
+	},
+	{
+		"id": 5,
+		"model": "ALPHARD",
+		"model_code": "AP"
+	},
+	{
+		"id": 6,
+		"model": "ALTIS",
+		"model_code": "AT"
+	},
+	{
+		"id": 7,
+		"model": "RUSH",
+		"model_code": "RS"
+	},
+	{
+		"id": 8,
+		"model": "AGYA",
+		"model_code": "AG"
+	},
+	{
+		"id": 9,
+		"model": "NAV1",
+		"model_code": "N1"
+	},
+	{
+		"id": 10,
+		"model": "CALYA",
+		"model_code": "CL"
+	},
+	{
+		"id": 11,
+		"model": "YARIS",
+		"model_code": "YR"
+	},
+	{
+		"id": 12,
+		"model": "VIOS",
+		"model_code": "VO"
+	},
+	{
+		"id": 13,
+		"model": "OTHERS",
+		"model_code": "OT"
+	},
+	{
+		"id": 14,
+		"model": "MEREK LAIN",
+		"model_code": "MRL"
+	}
+]
