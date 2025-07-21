@@ -38,17 +38,11 @@
                         <label for="parking-status" class="form-label">Status Kendaraan</label>
                         <select name="parking[status]" id="parking-status" class="form-control" required>
                             <option value="">Pilih Status Kendaraan</option>
-                            <option>TUNGGU PENYERAHAN</option>
-                            <option>TUNGGU SPARE PART</option>
-                            <option>TUNGGU SPK</option>
-                            <option>TUNGGU ASURANSI</option>
-                            <option>TUNGGU PERBAIKAN</option>
-                            <option>TUNGGU OPL</option>
-                            <option>TUNGGU PBT</option>
-                            <option>TUNGGU KONFIRMASI CUSTOMER</option>
-                            <option>INTERNAL</option>
-                            <option>TAMU</option>
+                            <?php foreach ($statuses as $status): ?>
+                                <option value="<?= esc($status) ?>"><?= esc($status) ?></option>
+                            <?php endforeach; ?>
                         </select>
+
                     </div>
                     <div class="mb-3">
                         <label for="parking-job" class="form-label">Pekerjaan</label>

@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Config\Enum\ParkingStatus;
 use App\Controllers\BaseController;
 use App\Models\HistoryModel;
 use App\Models\KapasitasModel;
@@ -13,8 +14,16 @@ class Parkir extends BaseController
 {
     protected $parkir;
     protected $kapasitas;
+    protected array $statuses;
 
+    public function __construct()
+    {
+        $this->parkir    = new ParkirModel();
+        $this->kapasitas = new KapasitasModel();
+        $this->statuses = ParkingStatus::all();
 
+        date_default_timezone_set('Asia/Jakarta');
+    }
 
     public function loginWithApi($username, $password)
     {
@@ -39,13 +48,6 @@ class Parkir extends BaseController
                 return redirect()->to(base_url());
             }
         }
-    }
-
-    public function __construct()
-    {
-        $this->parkir    = new ParkirModel();
-        $this->kapasitas = new KapasitasModel();
-        date_default_timezone_set('Asia/Jakarta');
     }
 
     public function index()
@@ -130,16 +132,17 @@ class Parkir extends BaseController
 
         $listModel = $this->parkir->_getListModel();
         $data  = [
-            'grupA'         => $grupA,
-            'grupB'         => $grupB,
-            'grupC'         => $grupC,
-            'grupD'         => $grupD,
-            'grupE'         => $grupE,
-            'grupF'         => $grupF,
-            'model'         => $listModel,
-            'lokasi'        => 'DEPAN',
-            'controller'    => $this,
-            'date'          => $date
+            'grupA'             => $grupA,
+            'grupB'             => $grupB,
+            'grupC'             => $grupC,
+            'grupD'             => $grupD,
+            'grupE'             => $grupE,
+            'grupF'             => $grupF,
+            'model'             => $listModel,
+            'lokasi'            => 'DEPAN',
+            'controller'        => $this,
+            'date'              => $date,
+            'statuses'          => $this->statuses
         ];
         return view('pages/depan', $data);
     }
@@ -186,7 +189,8 @@ class Parkir extends BaseController
             'controller'        => $this,
             'ovenLeftLabels'    => $ovenLeftLabels,
             'ovenRightLabels'   => $ovenRightLabels,
-            'date'              => $date
+            'date'              => $date,
+            'statuses'          => $this->statuses
         ];
         return view('pages/bp', $data);
     }
@@ -214,13 +218,14 @@ class Parkir extends BaseController
 
         $listModel = $this->parkir->_getListModel();
         $data = [
-            'lokasi'        => 'STALL_GR',
-            'grupG'         => $grupG,
-            'grupH'         => $grupH,
-            'labels'        => $labels,
-            'controller'    => $this,
-            'model'         => $listModel,
-            'date'          => $date
+            'lokasi'            => 'STALL_GR',
+            'grupG'             => $grupG,
+            'grupH'             => $grupH,
+            'labels'            => $labels,
+            'controller'        => $this,
+            'model'             => $listModel,
+            'date'              => $date,
+            'statuses'          => $this->statuses
         ];
         return view('pages/gr', $data);
     }
@@ -245,11 +250,12 @@ class Parkir extends BaseController
         $date      = date('Y-m-d');
 
         $data = [
-            'lokasi'     => 'AKM',
-            'model'      => $listModel,
-            'date'       => $date,
-            'grupP'      => $grupP,
-            'controller' => $this
+            'lokasi'            => 'AKM',
+            'model'             => $listModel,
+            'date'              => $date,
+            'grupP'             => $grupP,
+            'controller'        => $this,
+            'statuses'          => $this->statuses
         ];
         return view('pages/akm', $data);
     }

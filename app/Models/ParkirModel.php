@@ -21,8 +21,14 @@ class ParkirModel extends Model
     {
         $db      = \Config\Database::connect();
         $builder = $db->table("tb_model_kendaraan");
-        return $builder->select('*')->get()->getResultArray();
+
+        return $builder
+            ->select('*')
+            ->orderBy('model', 'ASC')
+            ->get()
+            ->getResultArray();
     }
+
 
     public function _getAllParkirByLocation($location, $date)
     {
