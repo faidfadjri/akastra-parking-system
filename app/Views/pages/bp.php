@@ -185,10 +185,14 @@
                                                     </div>
                                                 <?php elseif ($position == 6) : ?>
                                                     <div class="loading-area">
-                                                        loading unloading
+                                                        Sparepart
                                                     </div>
+                                                <?php elseif ($position == 4) : ?>
+                                                    <a class="seat-teal seat-vertical" grup="M" position="<?= $position; ?>" parking-name="Stall BP" id="<?= rand(time() * $position, time() * 2000); ?>">
+                                                        <?= (!empty($key) || $key === 0) ? $grupM[$key]['model_code'] . " | " . $grupM[$key]['license_plate'] . "<br>" . $grupM[$key]['category'] : "" ?>
+                                                    </a>
                                                 <?php else : ?>
-                                                    <?php if ($position >= 7 || $position == 4) $class = 'seat-yellow seat-vertical'; ?>
+                                                    <?php if ($position >= 7) $class = 'seat-yellow seat-vertical'; ?>
                                                     <?php $key = $controller->cari_parkir($grupM, $position); ?>
                                                     <a class="<?= $class; ?>" grup="M" position="<?= $position; ?>" parking-name="Stall BP" id="<?= rand(time() * $position, time() * 2000); ?>">
                                                         <?= (!empty($key) || $key === 0) ? $grupM[$key]['model_code'] . " | " . $grupM[$key]['license_plate'] . "<br>" . $grupM[$key]['category'] : "" ?>
@@ -224,14 +228,17 @@
                                         <?php endfor; ?>
                                         <div class="d-flex gap-1 justify-content-between">
                                             <div class="office d-flex gap-1">
-                                                <div class="seat-office seat-horizontal">
-                                                    R. Bahan
+                                                <div class="seat-purple seat-horizontal">
+                                                    Alat BP
                                                 </div>
-                                                <div class="seat-office seat-horizontal">
-                                                    R. Material
+                                                <div class="seat-purple seat-horizontal">
+                                                    R. Foreman
                                                 </div>
-                                                <div class="seat-office seat-horizontal-wide">
-                                                    R. Removal Part
+                                                <div class="seat-purple seat-horizontal">
+                                                    Gudang Bahan
+                                                </div>
+                                                <div class="seat-purple seat-horizontal">
+                                                    Part Removal
                                                 </div>
                                             </div>
                                             <div class="d-flex gap-1">
