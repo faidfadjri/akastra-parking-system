@@ -3,56 +3,27 @@
 namespace App\Database\Seeds;
 
 use CodeIgniter\Database\Seeder;
+use Exception;
 
 class CapacitySeeder extends Seeder
 {
     public function run()
     {
-        $datas = [
-            [
-                'lokasi'    => 'Parkiran GR',
-                'capacity'  => 18,
-                'category'  => 'GR'
-            ],
-            [
-                'lokasi'    => 'Parkiran BP',
-                'capacity'  => 27,
-                'category'  => 'BP'
-            ],
-            [
-                'lokasi'    => 'Parkiran Bayangan GR',
-                'capacity'  => 32,
-                'category'  => 'GR'
-            ],
-            [
-                'lokasi'    => 'Parkiran Bayangan GR',
-                'capacity'  => 55,
-                'category'  => 'GR'
-            ],
-            [
-                'lokasi'    => 'Stall GR',
-                'capacity'  => 16,
-                'category'  => 'GR'
-            ],
-            [
-                'lokasi'    => 'Stall GR',
-                'capacity'  => 20,
-                'category'  => 'GR'
-            ],
-            [
-                'lokasi'    => 'Parkiran AKM',
-                'capacity'  => 8,
-                'category'  => 'AKM'
-            ],
-            [
-                'lokasi'    => 'Parkiran Bayangan AKM',
-                'capacity'  => 2,
-                'category'  => 'AKM'
-            ],
-        ];
+        $jsonPath = ROOTPATH . 'app/Database/Models/capacity.json';
 
-        foreach ($datas as $data) {
-            $this->db->table('tb_capacity')->insert($data);
+        if (!is_file($jsonPath)) {
+            throw new Exception("JSON file not found at path: $jsonPath");
+        }
+
+        $json = file_get_contents($jsonPath);
+        $rows = json_decode($json, true);
+
+        if (!is_array($rows)) {
+            throw new Exception("Invalid JSON structure. Expected an array of rows.");
+        }
+
+        foreach ($rows as $row) {
+            $this->db->table('tb_capacity')->insert($row);
         }
     }
 }

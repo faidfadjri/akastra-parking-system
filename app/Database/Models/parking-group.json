@@ -1,0 +1,74 @@
+[
+    {
+    	"id": 1,
+    	"grup": "A",
+    	"lokasi": "DEPAN",
+    	"capacity": 9
+    },
+    {
+    	"id": 2,
+    	"grup": "B",
+    	"lokasi": "DEPAN",
+    	"capacity": 10
+    },
+    {
+    	"id": 3,
+    	"grup": "C",
+    	"lokasi": "DEPAN",
+    	"capacity": 9
+    },
+    {
+    	"id": 4,
+    	"grup": "D",
+    	"lokasi": "DEPAN",
+    	"capacity": 5
+    },
+    {
+    	"id": 5,
+    	"grup": "E",
+    	"lokasi": "DEPAN",
+    	"capacity": 7
+    },
+    {
+    	"id": 6,
+    	"grup": "F",
+    	"lokasi": "DEPAN",
+    	"capacity": 11
+    },
+    {
+    	"id": 7,
+    	"grup": "G",
+    	"lokasi": "STALL_BP",
+    	"capacity": 3
+    },
+    {
+    	"id": 8,
+    	"grup": "H",
+    	"lokasi": "STALL_BP",
+    	"capacity": 17
+    },
+    {
+    	"id": 9,
+    	"grup": "I",
+    	"lokasi": "STALL_BP",
+    	"capacity": 8
+    },
+    {
+    	"id": 10,
+    	"grup": "J",
+    	"lokasi": "STALL_BP",
+    	"capacity": 16
+    },
+    {
+    	"id": 11,
+    	"grup": "K",
+    	"lokasi": "STALL_GR",
+    	"capacity": 20
+    },
+    {
+    	"id": 12,
+    	"grup": "L",
+    	"lokasi": "STALL_GR",
+    	"capacity": 30
+    }
+]
