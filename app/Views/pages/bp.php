@@ -2,6 +2,8 @@
 
 <?= $this->section('content'); ?>
 <section class="main-section">
+    <?= $this->include('items/zoom-in-out.php'); ?>
+    <h1 class="headline">Area Stall GR</h1>
     <div class="main-area" id="main-area">
         <div class="container mt-5">
             <div class="row">
