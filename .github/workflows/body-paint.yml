@@ -19,8 +19,8 @@ jobs:
           key: ${{ secrets.PARKING_PRIVATE_KEY }}
           port: ${{ secrets.PARKING_SSH_PORT }}
           script: |
-            mkdir -p ~/monitoring-bp/1.0.0
-            cd ~/monitoring-bp/1.0.0
+            mkdir -p ~/body=paint/1.0.0
+            cd ~/body=paint/1.0.0
 
             if [ -d ".git" ]; then
               echo "Repository exists, pulling latest changes from body-paint.."
