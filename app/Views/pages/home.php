@@ -16,7 +16,6 @@
 
 <body>
     <section class="main-section">
-
         <div class="container">
             <div class="row mb-3">
                 <div class="col-6">
@@ -46,13 +45,13 @@
             <input type="hidden" class="form-control" id="AKMvehicle" value="<?= $exist['AKM']; ?>">
 
             <div class="row justify-content-center">
-                <div class="col-12 mb-2 text-white text-center text-oleo">
-                    <h1 class="card-title">
+                <div class="col-12 mb-4 text-white text-center text-oleo">
+                    <h1 class="card-title text-white">
                         Parking Mobile Akastra
                     </h1>
 
                     <?php if (isset($user)) : ?>
-                        <p class="card-subtitle fs-6 fst-italic" style="font-family: 'Poppins', sans-serif">
+                        <p class="card-subtitle fs-6 fst-italic text-white" style="font-family: 'Poppins', sans-serif">
                             last updated by <?= $user; ?> at <?= $date; ?>
                         </p>
                     <?php endif; ?>
@@ -212,7 +211,9 @@
                 </div>
                 <div class="col-12">
                     <div class="button-wrap mt-4 text-center">
-                        <a class="btn-next text-lato" href="<?= $date == date('Y-m-d') ? "/parkir/depan" : "/parkir/depan/" . $date; ?>">Next</a>
+                        <a class="btn-next text-lato" href="<?= $date == date('Y-m-d') ? "/parkir/depan" : "/parkir/depan/" . $date; ?>">
+                            Lihat Denah Parkir
+                        </a>
                     </div>
                 </div>
             </div>

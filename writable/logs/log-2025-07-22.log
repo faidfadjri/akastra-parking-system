@@ -1,0 +1,10 @@
+CRITICAL - 2025-07-22 10:02:23 --> Invalid file: pages/main.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/main.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/main', [], true)
+ 3 APPPATH\Controllers\Summary.php(62): view('pages/main', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Summary->index()
+ 5 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Summary))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

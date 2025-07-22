@@ -99,7 +99,7 @@ class Parkir extends BaseController
             'date'         => $date,
             'user'         => $user
         ];
-        return view('pages/main', $data);
+        return view('pages/home', $data);
     }
 
     public function cari_parkir(array $array, int $position)
