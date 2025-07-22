@@ -95,7 +95,7 @@
                                                 $seat = 'seat text-dark';
                                                 $name = 'Parkiran Bayangan BP';
                                             } else if ($position >= 7) {
-                                                $seat = 'seat-yellow text-dark';
+                                                $seat = 'seat-default text-dark';
                                                 $name = 'Parkiran Bayangan BP';
                                             } else {
                                                 $name = 'Parkiran GR';
@@ -151,7 +151,7 @@
                                 <p class="text-label-vertical-reverse">- Area Parkir BP -</p>
                                 <?php for ($position = 1; $position <= 6; $position++) : ?>
                                     <?php
-                                    $seat = 'seat-yellow text-white';
+                                    $seat = 'seat-default text-dark';
                                     $name = 'Parkiran BP';
                                     $marginRight = '0px'; // default harus dalam format CSS
 
@@ -211,11 +211,11 @@
                             <!-- Parkiran Pojok BP -->
                             <div class="d-flex mt-2 gap-1 justify-content-end w-100 mb-5 me-5 gap-2">
                                 <?php for ($position = 8; $position <= 15; $position++) : ?>
-                                    <?php $seat = 'seat-yellow'; ?>
+                                    <?php $seat = 'seat-default'; ?>
                                     <?php if ($position == 8) {
                                         $seat = 'seat text-dark';
                                     } else {
-                                        $seat = 'seat-yellow text-dark';
+                                        $seat = 'seat-default text-dark';
                                     } ?>
                                     <?php $key = $controller->cari_parkir($grupF, $position); ?>
                                     <a class="<?= $seat; ?> seat-vertical" grup="F" position="<?= $position; ?>" id="<?= rand($position * time(), 10 * time()); ?>" parking-name="Parkiran BP">
