@@ -4,11 +4,9 @@ namespace App\Controllers;
 
 use App\Config\Enum\ParkingStatus;
 use App\Controllers\BaseController;
-use App\Models\HistoryModel;
 use App\Models\KapasitasModel;
 use App\Models\ParkirModel;
 use Exception;
-use PDO;
 
 class Parkir extends BaseController
 {
