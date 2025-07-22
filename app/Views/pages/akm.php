@@ -71,7 +71,7 @@ function renderParkingSpot($controller, $grupP, $position, $isBayangan = false)
 
 <nav class="bottom-nav justify-content-center">
     <a class="cancel-button d-flex align-items-center justify-content-center"
-        href="/parkir/stall_gr<?= $date != date('Y-m-d') ? "/$date" : '' ?>">
+        href="/parkir/stall_bp<?= $date != date('Y-m-d') ? "/$date" : '' ?>">
         <span class="material-icons">navigate_before</span>
         Stall BP
     </a>
