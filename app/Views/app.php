@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="/css/main/global.css">
     <link rel="stylesheet" href="/css/main/scrollbar.css">
     <link rel="stylesheet" href="/css/main/legend.css">
+    <link rel="stylesheet" href="/css/main/seat.css">
     <link rel="stylesheet" href="/css/main/bottom-navigation.css">
 
     <?php if ($lokasi == 'DEPAN') : ?>
