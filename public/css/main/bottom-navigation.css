@@ -1,0 +1,39 @@
+/* ---- Bottom Navigation ----- */
+.bottom-nav {
+  width: 90%;
+  position: fixed;
+  bottom: 2%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.next-button {
+  color: var(--base-color);
+  padding: 4px 20px;
+  background-color: white;
+  border: 1px solid white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.next-button:hover {
+  color: var(--base-color);
+}
+
+.cancel-button {
+  color: white;
+  padding: 4px 20px;
+  background-color: var(--base-color);
+  border: 1px solid white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  color: white;
+}

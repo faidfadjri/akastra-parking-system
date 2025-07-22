@@ -2,22 +2,9 @@
 
 <?= $this->section('content'); ?>
 <section class="main-section">
-
-
-    <div class="zoom-in-out">
-        <button onclick="zoomIn()" class="btn btn-outline-primary btn-sm" data-bs-toggle="tooltip" title="Perbesar">
-            <span class="material-icons">zoom_in</span>
-        </button>
-        <button onclick="zoomOut()" class="btn btn-outline-secondary btn-sm" data-bs-toggle="tooltip" title="Perkecil">
-            <span class="material-icons">zoom_out</span>
-        </button>
-        <button onclick="resetZoom()" class="btn btn-outline-danger btn-sm" data-bs-toggle="tooltip" title="Reset Zoom">
-            <span class="material-icons">restart_alt</span>
-        </button>
-    </div>
     <div class="main-area" id="main-area">
         <div class="container mt-5">
-            <div class="row mb-5">
+            <div class="row">
                 <div class="col-12">
                     <div class="d-flex parkir-wrap">
                         <div class="d-flex-column justify-content-end z-index-99" style="width: 777px">
@@ -286,6 +273,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </section>
 <nav class="bottom-nav justify-content-between">
     <?php if ($date != date('Y-m-d')) : ?>
@@ -316,30 +304,5 @@
         </a>
     <?php endif; ?>
 </nav>
-
-<script>
-    let scale = 1;
-    const target = document.getElementById('main-area');
-
-    function applyZoom() {
-        target.style.transform = `scale(${scale})`;
-        target.style.transformOrigin = 'center center';
-    }
-
-    function zoomIn() {
-        scale += 0.1;
-        applyZoom();
-    }
-
-    function zoomOut() {
-        scale = Math.max(0.1, scale - 0.1);
-        applyZoom();
-    }
-
-    function resetZoom() {
-        scale = 1;
-        applyZoom();
-    }
-</script>
 
 <?= $this->endSection(); ?>
