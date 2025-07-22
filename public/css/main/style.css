@@ -1,177 +1,192 @@
-@import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Lato:wght@300;400;700&display=swap");
 
 :root {
-  --base-color: #165d7d;
+  --base-color: #004b6b;
+  --secondary-color: #e9ecef;
+  --accent-color: #00bfa6;
+  --text-dark: #343a40;
+  --text-muted: #6c757d;
+  --font-family-heading: "Poppins", sans-serif;
+  --font-family-body: "Lato", sans-serif;
+  --card-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+  --card-shadow-hover: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
 }
 
 html,
 body {
-  height: 100%;
-  width: 100%;
+  font-family: var(--font-family-body);
+  color: var(--text-dark);
+  background-color: var(--base-color);
   margin: 0;
   padding: 0;
-  background-color: var(--base-color);
+  height: 100%;
 }
 
-.basic-color {
-  background-color: var(--base-color);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  color: var(--base-color);
+  margin-bottom: 0.5rem;
 }
 
-.text-oleo {
-  font-family: "Oleo Script Swash Caps", cursive;
+p {
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
-.text-lato {
-  font-family: "Lato", sans-serif;
+a {
+  color: var(--base-color);
+  text-decoration: none;
 }
 
-.box-wrap {
-  display: flex;
-  justify-content: center;
-  column-gap: 10px;
+a:hover {
+  text-decoration: underline;
 }
 
-.white-box {
-  width: 200px;
-  height: 200px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  padding: 5px 20px;
-  box-sizing: border-box;
-  animation: fade-in linear 0.6s;
+button,
+.btn {
+  font-family: var(--font-family-heading);
+  border-radius: 0.5rem;
 }
 
-.blue-box {
-  width: 100%;
-  height: 60%;
-  border-radius: 5px;
-  background-color: var(--base-color);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 25px;
-  font-weight: bold;
+.card {
+  border: none;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
 }
 
 .main-section {
-  min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 2rem 1rem;
 }
 
-.no-decoration {
-  text-decoration: none;
-  border-radius: 5px;
+.main-area {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* ----- Animation ----- */
-
-@keyframes button-animation {
-  0% {
-    opacity: 0;
-    padding: 8px 10px;
-  }
-  25% {
-    opacity: 0.3;
-    padding: 8px 30px;
-  }
-  50% {
-    opacity: 0.7;
-    padding: 8px 100px;
-  }
-  100% {
-    opacity: 1;
-    padding: 8px 80px;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    rotate: 10deg;
-  }
-  25% {
-    opacity: 0.3;
-    rotate: 6deg;
-  }
-  50% {
-    opacity: 0.7;
-    rotate: 4deg;
-  }
-  100% {
-    opacity: 1;
-    rotate: 0deg;
-  }
-}
-
-.progress-wrap-detail {
-  font-size: 12px;
-}
-
-/* ----- Button ----- */
-.btn-next {
-  background-color: white;
-  border: 1px solid white;
-  width: 200px;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 8px 80px;
-  border-radius: 5px;
-  text-decoration: none;
-  color: #165d7d;
-  transition: 0.2s;
-  cursor: pointer;
-  animation: button-animation linear 1.2s;
-}
-
-.btn-next:hover {
-  color: white;
-  background-color: transparent;
-}
-
-/* ----- Toast ------ */
-.toast-wrapper {
-  position: fixed;
-  bottom: 20px;
-  right: 10px;
-}
-
-/* ---- On Mobile ----- */
-@media (max-width: 576px) {
-  .box-wrap {
-    flex-direction: column;
-    align-items: center;
-    row-gap: 5px;
-  }
-
-  .white-box {
-    width: 100%;
-  }
-}
-
-/* ----- Search Bar ----- */
 .form-group {
-  border-radius: 5px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
-.btn-search {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+  background-color: #fff;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
-  border: 0;
-  background-color: #165d7d;
-  color: white;
-  padding: 0px 20px;
 }
 
-.btn-search div {
-  height: 15px;
-  width: 15px;
+.form-group input {
+  border: none;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  outline: none;
+}
+
+.form-group button {
+  background-color: var(--base-color);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: #003952;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.4em 0.6em;
+  border-radius: 0.4rem;
+}
+
+.badge-success {
+  background-color: #d1f5e4;
+  color: #207d52;
+}
+
+.badge-danger {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.badge-warning {
+  background-color: #fff3cd;
+  color: #664d03;
+}
+
+.badge-info {
+  background-color: #cff4fc;
+  color: #055160;
+}
+
+.table th {
+  font-weight: 600;
+  color: var(--text-dark);
+  background-color: #f1f3f5;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.button-wrap a {
+  background-color: white;
+  padding: 0.4em 1em;
+  border-radius: 0.2em;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease, width 0.5s ease,
+    padding 0.3s ease;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Hover styling */
+.button-wrap a:hover {
+  padding: 0.4em 1.2em;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+}
+
+/* Optional: Animate width transition on load */
+@keyframes growWidth {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: auto;
+    opacity: 1;
+  }
+}
+
+.button-wrap a.animate-width {
+  animation: growWidth 0.6s ease-out forwards;
 }

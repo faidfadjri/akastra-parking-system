@@ -59,6 +59,6 @@ class Summary extends BaseController
             'date'         => $date,
             'user'         => $user
         ];
-        return view('pages/main', $data);
+        return view('pages/home', $data);
     }
 }
