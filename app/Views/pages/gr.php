@@ -17,16 +17,16 @@
                             </div>
 
                             <div class="d-flex flex-column">
-                                <div class="d-flex justify-content-end">
+                                <div class="d-flex justify-content-between">
                                     <div class="d-flex flex-column gap-0 me-5">
                                         <!-- Labels -->
-                                        <div class="d-flex gap-1">
+                                        <div class="d-flex" style="gap: 31px; margin-inline-start: 12px;">
                                             <?php for ($index = 0; $index < sizeof($labels); $index++) : ?>
-                                                <p class="label-seat-vertical"><?= $labels[$index]; ?></p>
+                                                <p class="label-seat-vertical text-center"><?= $labels[$index]; ?></p>
                                             <?php endfor; ?>
                                         </div>
                                         <!-- Stall GR -->
-                                        <div class="d-flex gap-1">
+                                        <div class="d-flex gap-2">
                                             <?php $key = $controller->cari_parkir($grupG, 1); ?>
                                             <a class="seat-blue seat-vertical" position="1" parking-name="Stall GR" grup="G" id="<?= rand(1 * time(), 100 * time()); ?>">
                                                 <?= (!empty($key) || $key === 0) ? $grupG[$key]['model_code'] . " | " . $grupG[$key]['license_plate'] . "<br>" . $grupG[$key]['category'] : "" ?>

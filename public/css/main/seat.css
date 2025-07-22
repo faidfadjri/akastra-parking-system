@@ -25,11 +25,18 @@
 }
 
 .seat-vertical-short {
-  height: 100px;
-  width: 50px;
+  height: 110px;
+  width: 55px;
+  font-size: 12px;
   text-decoration: none;
   font-family: "Lato", sans-serif;
   border-radius: 4px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .seat-horizontal {
