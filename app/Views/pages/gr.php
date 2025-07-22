@@ -2,16 +2,14 @@
 
 <?= $this->section('content'); ?>
 <section class="main-section">
+    <?= $this->include('items/zoom-in-out.php'); ?>
     <h1 class="headline">Area Stall GR</h1>
     <div class="main-area" id="main-area">
         <div class="container mt-5">
             <div class="row">
                 <div class="col-12">
                     <div class="d-flex w-100 parkir-wrap">
-
-                        <!-- Area Parkir GR -->
                         <div class="d-flex">
-
                             <div class="office-wrap">
                                 <div class="ruang-mesin">
                                     Area Kantin & Loker

@@ -2,7 +2,9 @@
 
 <?= $this->section('content'); ?>
 <section class="main-section">
+    <?= $this->include('items/zoom-in-out.php'); ?>
     <h1 class="headline">Area Parkir</h1>
+
     <div class="main-area" id="main-area">
         <div class="legend">
             <h6 class="text-lato">Keterangan</h6>
@@ -20,7 +22,7 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-12">
-                    <div class="d-flex w-100 parkir-wrap justify-content-between">
+                    <div class="d-flex w-100 parkir-wrap align-items-center justify-content-between">
 
                         <div class="gedung-wrap">
                             <img src="/assets/gedung-akastra.png" class="gedung">
@@ -218,14 +220,10 @@
             </div>
         </div>
     </div>
-
-
-
-
     <div class="empty"></div>
     <div class="wrapper"></div>
     <nav class="bottom-nav justify-content-between">
-        <a href="/" class="next-button d-flex">
+        <a href="/" class="cancel-button d-flex">
             <span class="material-icons">
                 navigate_before
             </span>
