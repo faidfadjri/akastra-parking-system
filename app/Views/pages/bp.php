@@ -3,7 +3,16 @@
 <?= $this->section('content'); ?>
 <section class="main-section">
     <?= $this->include('items/zoom-in-out.php'); ?>
-    <h1 class="headline">Area Stall BP</h1>
+
+    <div class="headline-wrapper">
+        <a href="/" class="back-button">
+            <span class="material-symbols-outlined mb-2">
+                arrow_back
+            </span>
+        </a>
+        <h1 class="headline">Area Stall BP</h1>
+    </div>
+
     <div class="main-area" id="main-area">
         <div class="container mt-5">
             <div class="row">
