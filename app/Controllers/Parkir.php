@@ -83,7 +83,12 @@ class Parkir extends BaseController
         $user             = $this->parkir->select('user')->where('created_at', $date)->get()->getFirstRow();
         $user ? $user = $user->user : $user = 'undefined';
 
-        $readyforDelivery = $this->parkir->select("*")->where('status', ParkingStatus::READY_FOR_DELIVERY)->get()->getResultArray();
+        $readyforDelivery = $this->parkir
+            ->select('*')
+            ->where('status', ParkingStatus::READY_FOR_DELIVERY)
+            ->where("(DATE(created_at) = CURDATE() OR DATE(created_at) = CURDATE() - INTERVAL 1 DAY)", null, false)
+            ->get()
+            ->getResultArray();
 
         $data = [
             'lokasi'        => '',
