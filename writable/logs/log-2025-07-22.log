@@ -44,3 +44,6 @@ in APPPATH\Controllers\Parkir.php on line 379.
  4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-07-22 20:30:04 --> Cannot redeclare App\Controllers\Parkir::search_car()
+in APPPATH\Controllers\Parkir.php on line 605.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
