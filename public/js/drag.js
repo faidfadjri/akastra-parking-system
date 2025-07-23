@@ -1,91 +1,125 @@
-let empty = $('.seat-horizontal')
+$(document).ready(function () {
+    let dragging = null;
+    let offset = { x: 0, y: 0 };
+    let originalParent = null;
 
-$(".seat-vertical").on("touchmove",function(event){
-    let touch = event.targetTouches[0];
-    $(this).css('position', 'fixed');
-    $(this).css('top', `${touch.pageY}px`);
-    $(this).css('left', `${touch.pageX}px`);
-    var drag = $(this);
+    const DRAGGABLE_SELECTOR = '.seat-vertical, .seat-horizontal, .seat-vertical-short, .seat-horizontal-wide, .seat-vertical-wide, .seat-horizontal-oven';
 
-    console.log(drag.get(0).getBoundingClientRect());
+    // MOUSE DRAG
+    $(document).on('mousedown', DRAGGABLE_SELECTOR, function (e) {
+        e.preventDefault();
+        dragging = $(this);
+        originalParent = dragging.parent();
 
-    empty = jQuery.map( empty, function(item) {
-        if(
-            drag.get(0).getBoundingClientRect().top + drag.offsetWidth / 2 < item.getBoundingClientRect().bottom
-        ){
-            alert('match')
-        }
-        // console.log(item.getBoundingClientRect());
-    });
-});
+        const rect = dragging[0].getBoundingClientRect();
+        offset.x = e.clientX - rect.left;
+        offset.y = e.clientY - rect.top;
 
-$(".seat-vertical").on("touchend",function(event){
-    $(this).css('position', 'relative');
-    $(this).css('top','');
-    $(this).css('left', '');
-});
-
-
-
- //-------------- DRAG & DROP COLUMN
-$('.seat-vertical, .seat-horizontal, .seat-vertical-short, .seat-horizontal-wide, .seat-vertical-wide, .seat-horizontal-oven').attr('draggable', "true");
-$('.seat-vertical, .seat-horizontal, .seat-vertical-short, .seat-horizontal-wide, .seat-vertical-wide, .seat-horizontal-oven').attr('ondragstart', "drag(event)");
-$('.seat-vertical, .seat-horizontal, .seat-vertical-short, .seat-horizontal-wide, .seat-vertical-wide, .seat-horizontal-oven').attr('ondrop', "drop(event)");
-$('.seat-vertical, .seat-horizontal, .seat-vertical-short, .seat-horizontal-wide, .seat-vertical-wide, .seat-horizontal-oven').attr('ondragover', "allowDrop(event)");
-
-
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    var group = ev.target.getAttribute('grup');
-    var posisi = ev.target.getAttribute('position');
-    var id = ev.target.id;
-
-    var html = $(`#${id}`).html();
-    if (html) {
-        ev.dataTransfer.setData("grup", String(group));
-        ev.dataTransfer.setData("posisi", String(posisi));
-        ev.dataTransfer.setData("id", String(id));
-    } else {
-        alert("Seat Masih Kosong");
-    }
-
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var grup = ev.dataTransfer.getData("grup", grup);
-    var posisi = ev.dataTransfer.getData("posisi", posisi);
-    var prevId = ev.dataTransfer.getData("id", posisi);
-
-    var newGrup = ev.target.getAttribute('grup');
-    var newPosisi = ev.target.getAttribute('position');
-    var newId = ev.target.id;
-
-    var html = String($(`#${newId}`).html()).trim().replace(/^\s+|\s+$/gm,'');
-
-    if (html == '') {
-        $.ajax({
-            type: "POST",
-            url: "/parkir/update_posisi",
-            data: {
-                grup: grup,
-                posisi: posisi,
-                newGrup: newGrup,
-                newPosisi: newPosisi
-            },
-            dataType: "json",
-            success: function(response) {
-                $(`#${prevId}`).html("");
-                $(`#${newId}`).html(response.model_code + ' | ' + response.license_plate + ' <br> ' + response.category);
-            },
-            error: function() {
-                location.reload();
-            }
+        dragging.css({
+            position: 'fixed',
+            zIndex: 1000,
+            pointerEvents: 'none',
         });
-    } else {
-        alert("data sudah terisi");
+
+        $('body').addClass('noselect');
+    });
+
+    $(document).on('mousemove', function (e) {
+        if (dragging) {
+            dragging.css({
+                left: `${e.clientX - offset.x}px`,
+                top: `${e.clientY - offset.y}px`,
+            });
+        }
+    });
+
+    $(document).on('mouseup', function (e) {
+        if (dragging) {
+            finishDrop(e.clientX, e.clientY);
+        }
+    });
+
+    // TOUCH DRAG
+    $(document).on('touchstart', DRAGGABLE_SELECTOR, function (e) {
+        dragging = $(this);
+        originalParent = dragging.parent();
+        let touch = e.originalEvent.touches[0];
+
+        const rect = dragging[0].getBoundingClientRect();
+        offset.x = touch.clientX - rect.left;
+        offset.y = touch.clientY - rect.top;
+
+        dragging.css({
+            position: 'fixed',
+            zIndex: 1000,
+            pointerEvents: 'none',
+        });
+
+        document.body.style.overflow = 'hidden';
+    });
+
+    $(document).on('touchmove', function (e) {
+        if (dragging) {
+            let touch = e.originalEvent.touches[0];
+            dragging.css({
+                left: `${touch.clientX - offset.x}px`,
+                top: `${touch.clientY - offset.y}px`,
+            });
+            e.preventDefault();
+        }
+    });
+
+    $(document).on('touchend touchcancel', function (e) {
+        if (dragging) {
+            let touch = e.originalEvent.changedTouches[0];
+            finishDrop(touch.clientX, touch.clientY);
+        }
+        document.body.style.overflow = '';
+    });
+
+    // FINISH DROP LOGIC
+    function finishDrop(x, y) {
+        let dropTarget = document.elementFromPoint(x, y);
+        if (dropTarget && $(dropTarget).is(DRAGGABLE_SELECTOR)) {
+            let $target = $(dropTarget);
+            let targetId = $target.attr('id');
+            let prevId = dragging.attr('id');
+
+            if ($target.html().trim() === '') {
+                $.ajax({
+                    type: "POST",
+                    url: "/parkir/update_posisi",
+                    data: {
+                        grup: dragging.attr('grup'),
+                        posisi: dragging.attr('position'),
+                        newGrup: $target.attr('grup'),
+                        newPosisi: $target.attr('position'),
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        $(`#${prevId}`).html('');
+                        $(`#${targetId}`).html(`${response.model_code} | ${response.license_plate}<br>${response.category}`);
+                    },
+                    error: function () {
+                        location.reload();
+                    }
+                });
+            } else {
+                alert('Data sudah terisi');
+            }
+        }
+
+        dragging.css({
+            position: 'relative',
+            left: '',
+            top: '',
+            zIndex: '',
+            pointerEvents: '',
+        });
+        dragging = null;
+        $('body').removeClass('noselect');
     }
-}
+
+    // Prevent user text selection
+    $('<style>.noselect { user-select: none; }</style>').appendTo('head');
+});
