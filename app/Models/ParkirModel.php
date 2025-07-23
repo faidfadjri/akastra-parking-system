@@ -30,12 +30,24 @@ class ParkirModel extends Model
     }
 
 
-    public function _getAllParkirByLocation($location, $date)
+    public function _getAllParkirByLocation($location, $date, $seatId = null)
     {
         $db      = \Config\Database::connect();
         $builder = $db->table($this->table);
-        return $builder->select('*')->where('lokasi', $location)->orderBy('grup')->orderBy('position')->where('created_at', $date)->get()->getResultArray();
+
+        $builder->select('*')
+            ->where('lokasi', $location)
+            ->where('created_at', $date)
+            ->orderBy('grup')
+            ->orderBy('position');
+
+        if (!empty($seatId)) {
+            $builder->where('id', $seatId);
+        }
+
+        return $builder->get()->getResultArray();
     }
+
 
     public function _getListParkirGrup($grup)
     {

@@ -56,6 +56,11 @@ $routes->group('parkir', ['filter' => 'login'], function ($routes) {
     $routes->get('stall_gr/(:segment)', 'Parkir::stall_gr/$1');
     $routes->get('akm/(:segment)', 'Parkir::akm/$1');
 
+    $routes->get('depan/(:segment)/(:segment)', 'Parkir::depan/$1/$2');
+    $routes->get('stall_bp/(:segment)/(:segment)', 'Parkir::stall_bp/$1/$2');
+    $routes->get('stall_gr/(:segment)/(:segment)', 'Parkir::stall_gr/$1/$2');
+    $routes->get('akm/(:segment)/(:segment)', 'Parkir::akm/$1/$2');
+
     //----- Non Pages Routes
     $routes->get('get_history', 'Parkir::get_history');
     $routes->post('update_posisi', 'Parkir::update_posisi');

@@ -106,13 +106,14 @@ class Parkir extends BaseController
         return $key;
     }
 
-    public function depan($date = null)
+    public function depan($date = null, $seatId = null)
     {
         if (!isset($date)) {
             $date          = date('Y-m-d');
         }
+
         $parkirGroups  = range('A', 'F');
-        $parkir = $this->parkir->_getAllParkirByLocation("DEPAN", $date);
+        $parkir = $this->parkir->_getAllParkirByLocation("DEPAN", $date, $seatId);
 
         $grupA = array();
         $grupB = array();
@@ -145,13 +146,13 @@ class Parkir extends BaseController
         return view('pages/depan', $data);
     }
 
-    public function stall_bp($date = null)
+    public function stall_bp($date = null, $seatId = null)
     {
         if (!isset($date)) {
             $date          = date('Y-m-d');
         }
         $parkirGroups  = range('I', 'O');
-        $parkir = $this->parkir->_getAllParkirByLocation("STALL_BP", $date);
+        $parkir = $this->parkir->_getAllParkirByLocation("STALL_BP", $date, $seatId);
 
         $grupI = array();
         $grupJ = array();
@@ -193,13 +194,14 @@ class Parkir extends BaseController
         return view('pages/bp', $data);
     }
 
-    public function stall_gr($date = null)
+    public function stall_gr($date = null, $seatId = null)
     {
         if (!isset($date)) {
             $date          = date('Y-m-d');
         }
+
         $parkirGroups  = range('G', 'H');
-        $parkir = $this->parkir->_getAllParkirByLocation("STALL_GR", $date);
+        $parkir = $this->parkir->_getAllParkirByLocation("STALL_GR", $date, $seatId);
 
         $grupG = array();
         $grupH = array();
@@ -228,13 +230,13 @@ class Parkir extends BaseController
         return view('pages/gr', $data);
     }
 
-    public function akm($date = null)
+    public function akm($date = null, $seatId = null)
     {
         if (!isset($date)) {
             $date          = date('Y-m-d');
         }
         $parkirGroups  = ['P'];
-        $parkir = $this->parkir->_getAllParkirByLocation("AKM", $date);
+        $parkir = $this->parkir->_getAllParkirByLocation("AKM", $date, $seatId);
 
         $grupP = array();
         foreach ($parkirGroups as $grup) {
@@ -569,21 +571,41 @@ class Parkir extends BaseController
 
     public function search_car()
     {
-        $keyword = $_POST['keyword'];
-        $result  = $this->parkir->select('*')->join('tb_model_kendaraan', 'tb_parking.model_code = tb_model_kendaraan.model_code')->like('license_plate', $keyword)->limit(4)->get()->getResultArray();
+        $request = service('request');
+        $keyword = trim($request->getPost('keyword'));
+
+        // Jika keyword kosong, kembalikan result kosong
+        if ($keyword === '') {
+            return $this->response->setJSON([
+                'code'    => 200,
+                'message' => 'Keyword kosong',
+                'result'  => []
+            ]);
+        }
+
+        $result = $this->parkir
+            ->select('tb_parking.id, tb_parking.lokasi, tb_model_kendaraan.model_code, tb_parking.license_plate, tb_parking.created_at')
+            ->join('tb_model_kendaraan', 'tb_parking.model_code = tb_model_kendaraan.model_code')
+            ->like('license_plate', $keyword)
+            ->orderBy('tb_parking.created_at', 'DESC')
+            ->limit(4)
+            ->get()
+            ->getResultArray();
+
         if ($result) {
-            return json_encode(array(
+            return $this->response->setJSON([
                 'code'    => 200,
                 'message' => 'Berhasil Mendapatkan Data Kendaraan',
                 'result'  => $result
-            ));
-        } else {
-            return json_encode(array(
-                'code'   => 404,
-                'message' => 'Data Kendaraan tidak ditemukan'
-            ));
+            ]);
         }
+
+        return $this->response->setJSON([
+            'code'    => 404,
+            'message' => 'Data Kendaraan tidak ditemukan'
+        ]);
     }
+
 
     public function get_history()
     {

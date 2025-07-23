@@ -57,16 +57,18 @@
                     <?php endif; ?>
                 </div>
                 <div class="col-lg-6 col-md-12 mb-5 gap-2 d-flex flex-column">
-                    <form action="/parkir/search_car" method="POST" id="search-form">
-                        <div class="form-group d-flex bg-white">
-                            <input type="text" name="keyword" autocomplete="off" class="form-control align-self-center rounded-xl border-0 text-lato bg-transparent" placeholder="Cari Kendaraan">
-                            <button type="submit" class="btn-search border-0">
-                                <span class="material-icons">
+                    <form action="/parkir/search_car" method="POST" id="search-form" style="position: relative;">
+                        <div class="form-group d-flex bg-white pe-2">
+                            <input type="text" name="keyword" autocomplete="off"
+                                class="form-control align-self-center rounded-xl border-0 text-lato bg-transparent no-focus-outline"
+                                placeholder="Cari Kendaraan" id="search-keyword">
+                            <button type="submit" class="btn-search border-0 p-2 d-flex align-items-center justify-center">
+                                <span class="material-icons p-0 m-0">
                                     search
                                 </span>
                             </button>
                         </div>
-                        <ul class="list-group mt-2" id="list-wrap">
+                        <ul class="list-group mt-2 d-none" id="list-wrap">
                         </ul>
                     </form>
                     <?php if (session()->getFlashdata('pesan')) : ?>
@@ -244,126 +246,7 @@
         </div>
     </div>
 
-
-    <script>
-        //---- Calculate Progress
-        $(document).ready(function() {
-            const GR = $("#GRvehicle").val();
-            const BP = $("#BPvehicle").val();
-            const AKM = $("#AKMvehicle").val();
-
-
-            const usage = $("#usage").val();
-            const capacity = $("#capacity").val();
-
-            const GRcapacity = $("#GRcapacity").val();
-            const BPcapacity = $("#BPcapacity").val();
-            const AKMcapacity = $("#AKMcapacity").val();
-
-
-            var overall = hitungPersentase(usage, capacity);
-            var gr = hitungPersentase(GR, GRcapacity, 'gr');
-            var bp = hitungPersentase(BP, BPcapacity, 'bp');
-            var akm = hitungPersentase(AKM, AKMcapacity, 'akm');
-
-            $("#overall-progress").css('width', `${overall['persentase']}%`);
-
-            $("#gr-progress").css('width', `${gr['persentase']}%`).addClass(gr['class']);
-            $("#bp-progress").css('width', `${bp['persentase']}%`).addClass(bp['class']);
-            $("#akm-progress").css('width', `${akm['persentase']}%`).addClass(akm['class']);
-
-            if (gr['class'] === 'bg-warning') {
-                $("#gr-list").html('<div class="alert alert-warning mt-4" role="alert">Atur Booking! Kendaraan sudah cukup banyak</div>');
-            } else if (gr['class'] == 'bg-danger') {
-                $("#gr-list").html('<div class="alert alert-danger mt-4" role="alert">Stop Penerimaan! Flow kendaraan tidak terkendali</div>');
-            }
-
-            if (bp['class'] === 'bg-warning') {
-                $("#bp-list").html('<div class="alert alert-warning mt-4" role="alert">Atur Booking! Kendaraan sudah cukup banyak</div>');
-            } else if (bp['class'] == 'bg-danger') {
-                $("#bp-list").html('<div class="alert alert-danger mt-4" role="alert">Stop Penerimaan! Flow kendaraan tidak terkendali</div>');
-            }
-        });
-
-
-        const hitungPersentase = (usage, capacity, divisi = null) => {
-            const result = Array();
-            let persentase = parseInt(usage) / parseInt(capacity) * 100;
-            if (divisi) {
-                if (divisi == 'akm') {
-                    if (usage <= 10) {
-                        result['class'] = '';
-                    } else if (usage > 11 && usage <= 12) {
-                        result['class'] = 'bg-warning';
-                    } else {
-                        result['class'] = 'bg-danger';
-                    }
-                } else if (divisi == 'bp') {
-                    if (usage <= 46) {
-                        result['class'] = '';
-                    } else if (usage >= 47 && usage <= 75) {
-                        result['class'] = 'bg-warning';
-                    } else {
-                        result['class'] = 'bg-danger';
-                    }
-                } else {
-                    if (usage <= 34) {
-                        result['class'] = '';
-                    } else if (usage >= 35 && usage <= 50) {
-                        result['class'] = 'bg-warning';
-                    } else {
-                        result['class'] = 'bg-danger';
-                    }
-                }
-            }
-
-            result['persentase'] = parseInt(persentase);
-            return result;
-        }
-
-        $(document).ready(function() {
-            $("#search-form").submit(function(e) {
-                e.preventDefault();
-
-                var form = $(this);
-                var actionUrl = form.attr('action');
-
-                $.ajax({
-                    type: "POST",
-                    url: actionUrl,
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(event) {
-                        $(".btn-search").html('<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>');
-                    },
-                    success: function(response) {
-                        if (response.code == 200) {
-                            const data = response.result;
-                            var html = '';
-                            data.forEach(element => {
-                                html += `<a href="/parkir/${element.lokasi.toLowerCase()}" class="no-decoration mb-1"><li class="list-group-item">${element.model} | ${element.license_plate}</li></a>`;
-                            });
-
-                            $("#list-wrap").html(html);
-                            $(".btn-search").html('<span class="material-icons">search</span>');
-                        } else {
-                            var html = '<li class="list-group-item">Oops! We can find that vehicle</li>';
-                            $("#list-wrap").html(html);
-                            $(".btn-search").html('<span class="material-icons">search</span>');
-                        }
-                    },
-                    error: function(param) {
-                        $(".btn-search").html('<span class="material-icons">search</span>');
-                    }
-                });
-            });
-        });
-
-
-        $(document).on('click', '.btn-history', function() {
-            $("#historyModal").modal('show');
-        })
-    </script>
+    <script src="/js/home.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
