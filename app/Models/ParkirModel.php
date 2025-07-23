@@ -8,7 +8,7 @@ class ParkirModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'tb_parking';
-    protected $allowedFields    = ['grup', 'position', 'others', 'jenis_parkir', 'model_code', 'license_plate', 'category', 'status', 'lokasi', 'created_at', 'updated_at', 'user'];
+    protected $allowedFields    = ['grup', 'position', 'others', 'jenis_parkir', 'model_code', 'license_plate', 'category', 'status', 'lokasi', 'technician', 'created_at', 'updated_at', 'user'];
     protected $useTimestamps    = true;
 
     public function __construct()

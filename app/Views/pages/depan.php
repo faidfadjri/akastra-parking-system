@@ -14,19 +14,6 @@
     </div>
 
     <div class="main-area" id="main-area">
-        <div class="legend">
-            <h6 class="text-lato">Keterangan</h6>
-            <div class="legend-wrap">
-                <div class="legend-orange"></div>
-                Gedung
-                <div class="legend-blue"></div>
-                Parkiran GR
-                <div class="legend-yellow"></div>
-                Parkiran BP
-                <div class="legend-dash"></div>
-                Parkiran Bayangan
-            </div>
-        </div>
         <div class="container mt-5">
             <div class="row">
                 <div class="col-12">

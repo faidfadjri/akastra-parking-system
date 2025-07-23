@@ -17,24 +17,7 @@
 <body>
     <section class="main-section">
         <div class="container">
-            <div class="row mb-3">
-                <div class="col-6">
-                    <a class="btn btn-danger shadow" href="/logout">
-                        <span class="material-icons">
-                            logout
-                        </span>
-                    </a>
-                </div>
-                <div class="col-6 text-end">
-                    <button class="btn btn-success shadow btn-history">
-                        <span class="material-icons">
-                            history
-                        </span>
-                    </button>
-                </div>
-            </div>
 
-            <!-- Hidden Input -->
             <input type="hidden" class="form-control" id="usage" value="<?= $exist['total']; ?>">
             <input type="hidden" class="form-control" id="capacity" value="<?= $capacity['total']; ?>">
             <input type="hidden" class="form-control" id="GRcapacity" value="<?= $capacity['GR']; ?>">
@@ -44,19 +27,32 @@
             <input type="hidden" class="form-control" id="BPvehicle" value="<?= $exist['BP']; ?>">
             <input type="hidden" class="form-control" id="AKMvehicle" value="<?= $exist['AKM']; ?>">
 
-            <div class="row justify-content-center">
-                <div class="col-12 mb-4 text-white text-center text-oleo">
-                    <h1 class="card-title text-white">
-                        Parking Mobile Akastra
-                    </h1>
+            <div class="row mt-3 mb-5 justify-content-center">
+                <div class="container-fluid">
+                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 mb-3">
+                        <a class="btn btn-danger shadow no-text-decoration order-1 order-md-0 d-flex fw-medium align-items-center gap-2" href="/logout">
+                            <span class="material-icons">logout</span>
+                            Keluar
+                        </a>
 
-                    <?php if (isset($user)) : ?>
-                        <p class="card-subtitle fs-6 fst-italic text-white" style="font-family: 'Poppins', sans-serif">
-                            last updated by <?= $user; ?> at <?= $date; ?>
-                        </p>
-                    <?php endif; ?>
+                        <div class="d-flex flex-column align-items-center justify-content-center text-center text-md-start flex-grow-1 order-0 order-md-1">
+                            <h1 class="card-title text-white mb-2">Parking Mobile Akastra</h1>
+                            <?php if (isset($user)) : ?>
+                                <p class="card-subtitle fs-6 fst-italic text-white" style="font-family: 'Poppins', sans-serif;">
+                                    last updated by <?= $user; ?> at <?= $date; ?>
+                                </p>
+                            <?php endif; ?>
+                        </div>
+
+                        <button class="btn btn-success btn-history shadow order-2 d-flex fw-medium align-items-center gap-2" type="button">
+                            <span class="material-icons">history</span>
+                            Riwayat
+                        </button>
+                    </div>
                 </div>
-                <div class="col-lg-6 col-md-12 mb-5 gap-2 d-flex flex-column">
+
+
+                <div class="col-lg-6 col-md-12 gap-2 d-flex flex-column">
                     <form action="/parkir/search_car" method="POST" id="search-form" style="position: relative;">
                         <div class="form-group d-flex bg-white pe-2">
                             <input type="text" name="keyword" autocomplete="off"
@@ -79,6 +75,39 @@
                     <?php endif; ?>
                 </div>
             </div>
+            <div class="row">
+                <div class="col">
+                    <div class="container">
+                        <h4 class="mb-4 text-center fw-bold text-white">Kendaraan Siap Delivery Hari ini</h4>
+                        <div class="table-responsive" style="max-width: 1000px; margin: auto;">
+                            <table class="table table-bordered table-hover align-middle bg-white">
+                                <thead class="table-primary text-center">
+                                    <tr>
+                                        <th style="width: 50px;">No</th>
+                                        <th style="min-width: 200px;">Model</th>
+                                        <th style="min-width: 120px;">Divisi</th>
+                                        <th style="min-width: 150px;">Teknisi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $no = 1; ?>
+                                    <?php foreach ($readyForDeliv as $item): ?>
+                                        <tr>
+                                            <td class="text-center"><?= esc($no++); ?></td>
+                                            <td class="text-center">
+                                                <?= esc($item['model_code'] ?? '-') . ' - ' . esc($item['license_plate'] ?? '-'); ?>
+                                            </td>
+                                            <td class="text-center"><?= esc($item['category'] ?? '-'); ?></td>
+                                            <td class="text-center"><?= esc($item['technician'] ?? '-'); ?></td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="border border-white my-4">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
                     <div class="card">
@@ -240,7 +269,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
 

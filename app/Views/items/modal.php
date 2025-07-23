@@ -54,6 +54,15 @@
                             <option class="none">Tidak Servis</option>
                         </select>
                     </div>
+                    <div class="mb-3">
+                        <label for="parking-job" class="form-label">Teknisi</label>
+                        <select name="parking[technician]" id="parking-technician" class="form-control" required>
+                            <option value="">Pilih Grup Teknisi</option>
+                            <option>GRUP A</option>
+                            <option>GRUP B</option>
+                            <option>NONE</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="modal-footer border-0">
                     <?php if ($date == date('Y-m-d')) :  ?>

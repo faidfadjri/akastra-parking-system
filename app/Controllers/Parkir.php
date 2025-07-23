@@ -50,13 +50,11 @@ class Parkir extends BaseController
 
     public function index()
     {
-
-        $date = date('Y-m-d'); #---- set default date
+        $date = date('Y-m-d');
         if (isset($_GET['date'])) {
             $date = $_GET['date'];
         }
 
-        #---- get parkir and check is exist or not
         $parkirNow        = $this->parkir->select('*')->where('created_at', $date)->get()->getResultArray();
         if (!$parkirNow) {
             $lastDateExist = $this->parkir->select('created_at')->orderBy('created_at', 'DESC')->get()->getFirstRow();
@@ -67,7 +65,6 @@ class Parkir extends BaseController
             }
         }
 
-        #---- get summary to get car status 
         $category         = ['GR', 'BP', 'AKM'];
         foreach ($category as $cat) {
             $status           = $this->parkir->select('status')->where('category', $cat)->where('DATE(created_at)', $date)->groupBy('status')->get()->getResultArray();
@@ -80,22 +77,24 @@ class Parkir extends BaseController
             }
         }
 
-
         $kapasitas        = $this->kapasitas->select('SUM(capacity) as total, SUM(CASE WHEN category = "GR" THEN capacity END) as GR, SUM(CASE WHEN category = "BP" THEN capacity END) as BP, SUM(CASE WHEN category = "AKM" THEN capacity END) as AKM ')->get()->getRowArray();
         $exist            = $this->parkir->select('COUNT(CASE WHEN category != 0 THEN id END) as total ,COUNT(CASE WHEN category = "GR" THEN id END) as GR, COUNT(CASE WHEN category = "BP" THEN id END) as BP,COUNT(CASE WHEN category = "AKM" THEN id END) as AKM')->where('DATE(created_at)', $date)->get()->getRowArray();
 
         $user             = $this->parkir->select('user')->where('created_at', $date)->get()->getFirstRow();
         $user ? $user = $user->user : $user = 'undefined';
 
+        $readyforDelivery = $this->parkir->select("*")->where('status', ParkingStatus::READY_FOR_DELIVERY)->get()->getResultArray();
+
         $data = [
-            'lokasi'       => '',
-            'capacity'     => $kapasitas,
-            'exist'        => $exist,
-            'GRSummary'    => $GRSummary,
-            'BPSummary'    => $BPSummary,
-            'AKMSummary'   => $AKMSummary,
-            'date'         => $date,
-            'user'         => $user
+            'lokasi'        => '',
+            'capacity'      => $kapasitas,
+            'exist'         => $exist,
+            'GRSummary'     => $GRSummary,
+            'BPSummary'     => $BPSummary,
+            'AKMSummary'    => $AKMSummary,
+            'date'          => $date,
+            'user'          => $user,
+            'readyForDeliv' => $readyforDelivery
         ];
         return view('pages/home', $data);
     }
@@ -405,7 +404,6 @@ class Parkir extends BaseController
 
 
         $nopol = strtoupper($_POST['license_plate']);
-        // $date  = $data['date'] ? $data['date'] : date('Y-m-d');
         $date  = date('Y-m-d');
 
         $result = false;

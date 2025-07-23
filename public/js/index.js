@@ -29,8 +29,8 @@ $(document).on('click', '.seat-vertical, .seat-horizontal, .seat-vertical-short,
         dataType: "json",
         success: function (response) {
             if(response.code === 200){
-                const label = ['parking-id','parking-license-plate', 'parking-model', 'parking-other', 'parking-status', 'parking-job'];
-                const field = ['id','license_plate', 'model_code', 'others', 'status', 'category'];
+                const label = ['parking-id','parking-license-plate', 'parking-model', 'parking-other', 'parking-status', 'parking-job', 'parking-technician'];
+                const field = ['id','license_plate', 'model_code', 'others', 'status', 'category', 'technician'];
                 const detail = response.data;
                 if(detail != null){
                     $("#parking-id").prop('disabled', false);

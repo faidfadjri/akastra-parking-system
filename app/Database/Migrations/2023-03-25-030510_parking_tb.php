@@ -57,6 +57,11 @@ class ParkingTable extends Migration
                 'default'       => 'Parkiran BP',
                 'null'          => FALSE,
             ],
+            'technician'   => [
+                'type'          => 'VARCHAR',
+                'constraint'    => '250',
+                'null'          => true
+            ],
             'created_at' => [
                 'type'          => 'DATE',
                 'null'          => true
