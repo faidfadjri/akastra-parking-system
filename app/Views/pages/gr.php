@@ -149,7 +149,7 @@
                 <span class="material-icons">
                     navigate_before
                 </span>
-                Area Parkiran
+                Parkiran
             </a>
             <a class="next-button d-flex" href="/parkir/stall_bp/<?= $date; ?>">
                 Stall BP
@@ -162,7 +162,7 @@
                 <span class="material-icons">
                     navigate_before
                 </span>
-                Area Parkiran
+                Parkiran
             </a>
             <a class="next-button d-flex" href="/parkir/stall_bp">
                 Stall BP
