@@ -47,3 +47,5 @@ in APPPATH\Controllers\Parkir.php on line 379.
 CRITICAL - 2025-07-22 20:30:04 --> Cannot redeclare App\Controllers\Parkir::search_car()
 in APPPATH\Controllers\Parkir.php on line 605.
  1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-07-22 21:47:41 --> Duplicate entry '1' for key 'tb_model_kendaraan.PRIMARY'
+ERROR - 2025-07-22 21:47:41 --> Duplicate entry '1' for key 'tb_grup_parking.PRIMARY'

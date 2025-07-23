@@ -15,9 +15,9 @@
       "category": "GR"
     },
     {
-      "lokasi": "Parkiran Bayangan GR",
+      "lokasi": "Parkiran Bayangan BP",
       "capacity": 55,
-      "category": "GR"
+      "category": "BP"
     },
     {
       "lokasi": "Stall GR",
@@ -25,9 +25,9 @@
       "category": "GR"
     },
     {
-      "lokasi": "Stall GR",
+      "lokasi": "Stall BP",
       "capacity": 20,
-      "category": "GR"
+      "category": "BP"
     },
     {
       "lokasi": "Parkiran AKM",
