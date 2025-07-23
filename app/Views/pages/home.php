@@ -96,6 +96,13 @@
                         <div class="card-body border-0 shadow">
                             <h5 class="card-text text-lato text-muted">GR Vehicle</h5>
                             <h2 class="card-title mb-4 text-lato fw-bold"><?= $exist['GR'] . ' / ' . $capacity['GR']; ?></h2>
+                            <a class="btn-stall mb-2 text-lato" href="<?= $date == date('Y-m-d') ? "/parkir/stall_gr" : "/parkir/stall_gr/" . $date; ?>">
+                                Lihat Denah
+                                <span class="material-symbols-outlined">
+                                    arrow_forward
+                                </span>
+                                </span>
+                            </a>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" aria-label="Basic example" id="gr-progress" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
@@ -136,6 +143,12 @@
                         <div class="card-body border-0 shadow">
                             <h5 class="card-text text-lato text-muted">BP Vehicle</h5>
                             <h2 class="card-title mb-4 text-lato fw-bold"><?= $exist['BP'] . ' / ' . $capacity['BP']; ?></h2>
+                            <a class="btn-stall mb-2 text-lato" href="<?= $date == date('Y-m-d') ? "/parkir/stall_bp" : "/parkir/stall_bp/" . $date; ?>">
+                                Lihat Denah
+                                <span class="material-symbols-outlined">
+                                    arrow_forward
+                                </span>
+                            </a>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" aria-label="Basic example" id="bp-progress" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
@@ -176,6 +189,13 @@
                         <div class="card-body border-0 shadow">
                             <h5 class="card-text text-lato text-muted">AKM Vehicle</h5>
                             <h2 class="card-title mb-4 text-lato fw-bold"><?= $exist['AKM'] . ' / ' . $capacity['AKM']; ?></h2>
+
+                            <a class="btn-stall mb-2 text-lato" href="<?= $date == date('Y-m-d') ? "/parkir/stall_bp" : "/parkir/stall_bp/" . $date; ?>">
+                                Lihat Denah
+                                <span class="material-symbols-outlined">
+                                    arrow_forward
+                                </span>
+                            </a>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" aria-label="Basic example" id="akm-progress" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
@@ -213,8 +233,9 @@
                 </div>
                 <div class="col-12">
                     <div class="button-wrap mt-4 text-center">
-                        <a class="btn-next text-lato" href="<?= $date == date('Y-m-d') ? "/parkir/depan" : "/parkir/depan/" . $date; ?>">
-                            Lihat Denah Parkir
+                        <a class="btn-next text-lato d-inline-flex align-items-center gap-1" style="height: fit-content;" href="<?= $date == date('Y-m-d') ? "/parkir/depan" : "/parkir/depan/" . $date; ?>">
+                            Mulai Pengecekan
+                            <span class="material-icons" style="font-size: 1.2rem;">arrow_forward</span>
                         </a>
                     </div>
                 </div>
