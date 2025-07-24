@@ -2,6 +2,7 @@
   border: 1px dashed black;
   color: black;
   cursor: pointer;
+  user-select: none;
 }
 
 .seat:hover {
