@@ -610,7 +610,8 @@
             updateElementClasses(draggedEl, targetData.content);
             updateElementClasses(targetEl, draggedData.content);
 
-            logMove(draggedData, targetData);
+            const recordId = draggedEl.id
+            logMove(recordId, draggedData, targetData);
         }
 
         // Update element classes based on content
@@ -623,12 +624,12 @@
             }
         }
 
-        function logMove(from, to) {
-
+        function logMove(recordId, from, to) {
             $.ajax({
                 type: "POST",
                 url: "/parkir/update_posisi",
                 data: {
+                    id : recordId,
                     grup: from.grup,
                     posisi: from.position,
                     newGrup: to.grup,
