@@ -1,61 +1,61 @@
 
 
 //------ Modal Click
-$(document).on('click', '.seat-vertical, .seat-horizontal, .seat-vertical-short, .seat-horizontal-wide, .seat-horizontal-oven, .seat-vertical-wide', function () { 
-    //----- Set hidden Key from attribute
-    var grup     = $(this).attr('grup');
-    var position = $(this).attr('position');
-    var seatId   = $(this).attr('id');
-    var parking  = $(this).attr('parking-name');
+// $(document).on('click', '.seat-vertical, .seat-horizontal, .seat-vertical-short, .seat-horizontal-wide, .seat-horizontal-oven, .seat-vertical-wide', function () { 
+//     //----- Set hidden Key from attribute
+//     var grup     = $(this).attr('grup');
+//     var position = $(this).attr('position');
+//     var seatId   = $(this).attr('id');
+//     var parking  = $(this).attr('parking-name');
 
-    const date   = $('#current-date').val();
+//     const date   = $('#current-date').val();
 
-    $("#parking-form").trigger("reset");
-    $("#parking-grup").val(grup);
-    $("#parking-position").val(position);
-    $("#seat-id").val(seatId);
-    $("#parking-name").val(parking);
+//     $("#parking-form").trigger("reset");
+//     $("#parking-grup").val(grup);
+//     $("#parking-position").val(position);
+//     $("#seat-id").val(seatId);
+//     $("#parking-name").val(parking);
     
-    $("#addModal").modal('show');
+//     $("#addModal").modal('show');
 
-    $.ajax({
-        type: "POST",
-        url: "/parkir/get_detail",
-        data: {
-            grup   : grup,
-            posisi : position,
-            date   : date
-        },
-        dataType: "json",
-        success: function (response) {
-            if(response.code === 200){
-                const label = ['parking-id','parking-license-plate', 'parking-model', 'parking-other', 'parking-status', 'parking-job', 'parking-technician'];
-                const field = ['id','license_plate', 'model_code', 'others', 'status', 'category', 'technician'];
-                const detail = response.data;
-                if(detail != null){
-                    $("#parking-id").prop('disabled', false);
-                    $(".btn-delete").removeClass('d-none');
-                    label.forEach((element,index) => {
-                        $(`#${element}`).val(detail[field[index]]);
-                    });
+//     $.ajax({
+//         type: "POST",
+//         url: "/parkir/get_detail",
+//         data: {
+//             grup   : grup,
+//             posisi : position,
+//             date   : date
+//         },
+//         dataType: "json",
+//         success: function (response) {
+//             if(response.code === 200){
+//                 const label = ['parking-id','parking-license-plate', 'parking-model', 'parking-other', 'parking-status', 'parking-job', 'parking-technician'];
+//                 const field = ['id','license_plate', 'model_code', 'others', 'status', 'category', 'technician'];
+//                 const detail = response.data;
+//                 if(detail != null){
+//                     $("#parking-id").prop('disabled', false);
+//                     $(".btn-delete").removeClass('d-none');
+//                     label.forEach((element,index) => {
+//                         $(`#${element}`).val(detail[field[index]]);
+//                     });
 
-                    if(detail.others){
-                        $("#other-wrap").removeClass("d-none");
-                    } else {
-                        $("#other-wrap").addClass("d-none");
-                    }
-                }
-            } else {
-                $("#parking-id").prop('disabled', true);
-                $("#other-wrap").addClass("d-none");
-                $(".btn-delete").addClass('d-none');
-            }
-        },
-        error : function (err) { 
-            console.log(err);
-         }
-    });
-})
+//                     if(detail.others){
+//                         $("#other-wrap").removeClass("d-none");
+//                     } else {
+//                         $("#other-wrap").addClass("d-none");
+//                     }
+//                 }
+//             } else {
+//                 $("#parking-id").prop('disabled', true);
+//                 $("#other-wrap").addClass("d-none");
+//                 $(".btn-delete").addClass('d-none');
+//             }
+//         },
+//         error : function (err) { 
+//             console.log(err);
+//          }
+//     });
+// })
 
 //----- Button Delete
 $(document).on('click', '.btn-delete', function (event) { 

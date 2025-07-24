@@ -814,3 +814,43 @@ in APPPATH\Controllers\Parkir.php on line 385.
  4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-07-24 10:23:02 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 385.
+ 1 APPPATH\Controllers\Parkir.php(385): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 385)
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-07-24 10:27:05 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 385.
+ 1 APPPATH\Controllers\Parkir.php(385): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 385)
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-07-24 10:27:06 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 385.
+ 1 APPPATH\Controllers\Parkir.php(385): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 385)
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-07-24 10:27:07 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 385.
+ 1 APPPATH\Controllers\Parkir.php(385): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 385)
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2025-07-24 10:27:07 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Parkir.php on line 385.
+ 1 APPPATH\Controllers\Parkir.php(385): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Parkir.php', 385)
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->update_posisi()
+ 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

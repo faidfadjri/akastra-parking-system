@@ -1,19 +1,42 @@
 <div class="modal fade" id="addModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-md rounded-5">
         <div class="modal-content">
             <form action="/parkir/tambah_parkir" method="POST" id="parking-form">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title" id="staticBackdropLabel">Vehicle Info</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Parking Info</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body border-0">
+
+                    <div class="seat-info">
+                        <h4>Informasi Slot</h4>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="info-label">Lokasi</span>
+                                <span class="info-value" id="modalLocation">Area <?= $lokasi; ?></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Posisi</span>
+                                <span class="info-value" id="modalPosition">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Status</span>
+                                <span class="status-badge" id="modalStatus">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Grup</span>
+                                <span class="info-value" id="modalGrup">-</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Hidden Key Input -->
                     <input type="hidden" name="parking[lokasi]" id="parking-lokasi" class="form-control mb-2" value="<?= $lokasi; ?>" readonly>
                     <input type="hidden" name="parking[grup]" id="parking-grup" class="form-control mb-2" readonly>
                     <input type="hidden" name="parking[position]" id="parking-position" class="form-control mb-2" readonly>
                     <input type="hidden" name="id" id="parking-id" class="form-control mb-2" readonly>
                     <input type="hidden" id="seat-id" class="form-control mb-2" readonly>
-                    <input type="text" id="parking-name" name="parking[jenis_parkir]" class="form-control mb-2" readonly>
+                    <input type="hidden" id="parking-name" name="parking[jenis_parkir]" class="form-control mb-2" readonly>
                     <input type="hidden" name="parking[date]" id="current-date" readonly value="<?= $date; ?>">
                     <!-- End Hidden Key Input -->
 

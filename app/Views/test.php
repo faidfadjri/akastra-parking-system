@@ -512,6 +512,82 @@
             color: white;
         }
 
+        /* Drag Preview for Touch */
+        .drag-preview {
+            pointer-events: none !important;
+            transition: none !important;
+        }
+
+        /* Touch feedback */
+        @media (hover: none) and (pointer: coarse) {
+
+            .seat-vertical,
+            .seat-horizontal,
+            .seat-vertical-short,
+            .seat-horizontal-wide,
+            .seat-vertical-wide,
+            .seat-horizontal-oven {
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
+            }
+
+            .seat-vertical:active,
+            .seat-horizontal:active,
+            .seat-vertical-short:active,
+            .seat-horizontal-wide:active,
+            .seat-vertical-wide:active,
+            .seat-horizontal-oven:active {
+                transform: scale(0.95);
+                transition: transform 0.1s ease;
+            }
+        }
+
+        /* Improved mobile modal */
+        @media (max-width: 768px) {
+            .modal {
+                width: 95%;
+                max-height: 90vh;
+                margin: 20px;
+            }
+
+            .modal-body {
+                padding: 20px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .modal-footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 12px;
+            }
+        }
+
+        .info-panel h3 {
+            margin: 0 0 10px 0;
+            color: #495057;
+        }
+
+        .legend {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+        }
+
         /* Info Panel */
         .info-panel {
             background-color: #e9ecef;
@@ -553,7 +629,9 @@
 
         <div class="info-panel">
             <h3>Cara Penggunaan:</h3>
-            <p>Drag dan drop kendaraan antar slot parkir. Sistem akan otomatis memvalidasi perpindahan.</p>
+            <p><strong>Desktop:</strong> Klik untuk edit, drag untuk pindah posisi.<br>
+                <strong>Mobile:</strong> Tap untuk edit, tahan lama (0.5s) lalu drag untuk pindah posisi.
+            </p>
             <div class="legend">
                 <div class="legend-item">
                     <div class="legend-color seat-blue"></div>
@@ -768,14 +846,14 @@
         const TOUCH_TIME_THRESHOLD = 150; // ms to distinguish tap from drag
         const LONG_PRESS_DURATION = 500; // ms for long press to start drag
 
-        // Initialize drag and drop + click handlers
+        // Initialize drag and drop + click handlers + touch handlers
         function initializeDragAndDrop() {
             const draggableElements = document.querySelectorAll(DRAGGABLE_SELECTOR);
 
             draggableElements.forEach(element => {
                 element.draggable = true;
 
-                // Drag events
+                // Desktop drag events
                 element.addEventListener('dragstart', handleDragStart);
                 element.addEventListener('dragend', handleDragEnd);
                 element.addEventListener('dragover', handleDragOver);
@@ -783,11 +861,256 @@
                 element.addEventListener('dragenter', handleDragEnter);
                 element.addEventListener('dragleave', handleDragLeave);
 
-                // Click events
+                // Mouse events
                 element.addEventListener('mousedown', handleMouseDown);
                 element.addEventListener('mouseup', handleMouseUp);
                 element.addEventListener('click', handleClick);
+
+                // Touch events for mobile
+                element.addEventListener('touchstart', handleTouchStart, {
+                    passive: false
+                });
+                element.addEventListener('touchmove', handleTouchMove, {
+                    passive: false
+                });
+                element.addEventListener('touchend', handleTouchEnd, {
+                    passive: false
+                });
+                element.addEventListener('touchcancel', handleTouchCancel, {
+                    passive: false
+                });
             });
+        }
+
+        // Touch Event Handlers
+        function handleTouchStart(e) {
+            const touch = e.touches[0];
+            touchStartX = touch.clientX;
+            touchStartY = touch.clientY;
+            touchCurrentX = touch.clientX;
+            touchCurrentY = touch.clientY;
+            touchStartTime = Date.now();
+            touchElement = this;
+            initialTouchTarget = this;
+            isTouchDragging = false;
+
+            // Set up long press detection for drag initiation
+            setTimeout(() => {
+                if (touchElement === this && !isTouchDragging) {
+                    const timeDiff = Date.now() - touchStartTime;
+                    const distance = Math.sqrt(
+                        Math.pow(touchCurrentX - touchStartX, 2) +
+                        Math.pow(touchCurrentY - touchStartY, 2)
+                    );
+
+                    // Start drag if long press and minimal movement
+                    if (timeDiff >= LONG_PRESS_DURATION && distance < TOUCH_MOVE_THRESHOLD) {
+                        startTouchDrag(this, touch);
+                    }
+                }
+            }, LONG_PRESS_DURATION);
+        }
+
+        function handleTouchMove(e) {
+            if (!touchElement) return;
+
+            const touch = e.touches[0];
+            touchCurrentX = touch.clientX;
+            touchCurrentY = touch.clientY;
+
+            const distance = Math.sqrt(
+                Math.pow(touchCurrentX - touchStartX, 2) +
+                Math.pow(touchCurrentY - touchStartY, 2)
+            );
+
+            const timeDiff = Date.now() - touchStartTime;
+
+            // If we're already touch dragging, update position
+            if (isTouchDragging) {
+                e.preventDefault(); // Prevent scrolling while dragging
+                updateTouchDragPosition(touch);
+                updateDropTarget(touch);
+                return;
+            }
+
+            // Check if we should start dragging (significant movement in short time)
+            if (distance > TOUCH_MOVE_THRESHOLD && timeDiff < TOUCH_TIME_THRESHOLD) {
+                // This looks like a scroll gesture, don't interfere
+                touchElement = null;
+                return;
+            }
+        }
+
+        function handleTouchEnd(e) {
+            const timeDiff = Date.now() - touchStartTime;
+            const distance = Math.sqrt(
+                Math.pow(touchCurrentX - touchStartX, 2) +
+                Math.pow(touchCurrentY - touchStartY, 2)
+            );
+
+            if (isTouchDragging) {
+                e.preventDefault();
+                completeTouchDrag();
+            } else if (distance < TOUCH_MOVE_THRESHOLD && timeDiff < TOUCH_TIME_THRESHOLD) {
+                // This is a tap, open modal
+                e.preventDefault();
+                openModal(initialTouchTarget);
+            }
+
+            resetTouchState();
+        }
+
+        function handleTouchCancel(e) {
+            if (isTouchDragging) {
+                cancelTouchDrag();
+            }
+            resetTouchState();
+        }
+
+        function startTouchDrag(element, touch) {
+            isTouchDragging = true;
+            draggedElement = element;
+            touchElement = element;
+
+            draggedData = {
+                grup: element.getAttribute('grup'),
+                position: element.getAttribute('position'),
+                parkingName: element.getAttribute('parking-name'),
+                content: element.innerHTML,
+                classList: Array.from(element.classList)
+            };
+
+            // Add visual feedback
+            element.classList.add('dragging');
+
+            // Create drag preview
+            createDragPreview(element, touch);
+
+            // Provide haptic feedback if available
+            if (navigator.vibrate) {
+                navigator.vibrate(50);
+            }
+
+            // Prevent default to avoid text selection
+            document.body.style.userSelect = 'none';
+            document.body.style.webkitUserSelect = 'none';
+        }
+
+        function createDragPreview(element, touch) {
+            dragPreview = element.cloneNode(true);
+            dragPreview.classList.add('drag-preview');
+            dragPreview.style.position = 'fixed';
+            dragPreview.style.pointerEvents = 'none';
+            dragPreview.style.zIndex = '9999';
+            dragPreview.style.opacity = '0.8';
+            dragPreview.style.transform = 'scale(1.1) rotate(5deg)';
+            dragPreview.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+            dragPreview.style.left = (touch.clientX - 40) + 'px';
+            dragPreview.style.top = (touch.clientY - 40) + 'px';
+
+            document.body.appendChild(dragPreview);
+        }
+
+        function updateTouchDragPosition(touch) {
+            if (dragPreview) {
+                dragPreview.style.left = (touch.clientX - 40) + 'px';
+                dragPreview.style.top = (touch.clientY - 40) + 'px';
+            }
+        }
+
+        function updateDropTarget(touch) {
+            // Get element under touch point (excluding the preview)
+            if (dragPreview) {
+                dragPreview.style.display = 'none';
+            }
+
+            const elementBelow = document.elementFromPoint(touch.clientX, touch.clientY);
+
+            if (dragPreview) {
+                dragPreview.style.display = 'block';
+            }
+
+            // Remove previous drop target highlight
+            if (dropTarget && dropTarget !== draggedElement) {
+                dropTarget.classList.remove('drag-over');
+            }
+
+            // Find valid drop target
+            const validTarget = elementBelow?.closest(DRAGGABLE_SELECTOR);
+
+            if (validTarget && validTarget !== draggedElement) {
+                dropTarget = validTarget;
+                dropTarget.classList.add('drag-over');
+            } else {
+                dropTarget = null;
+            }
+        }
+
+        function completeTouchDrag() {
+            if (dropTarget && dropTarget !== draggedElement) {
+                // Perform the drop
+                const targetData = {
+                    grup: dropTarget.getAttribute('grup'),
+                    position: dropTarget.getAttribute('position'),
+                    parkingName: dropTarget.getAttribute('parking-name'),
+                    content: dropTarget.innerHTML,
+                    classList: Array.from(dropTarget.classList)
+                };
+
+                if (validateMove(draggedData, targetData)) {
+                    swapElements(draggedElement, dropTarget, draggedData, targetData);
+                    showMessage('Perpindahan berhasil!', 'success');
+
+                    // Haptic feedback for success
+                    if (navigator.vibrate) {
+                        navigator.vibrate([50, 50, 50]);
+                    }
+                } else {
+                    showMessage('Perpindahan tidak diizinkan!', 'error');
+
+                    // Haptic feedback for error
+                    if (navigator.vibrate) {
+                        navigator.vibrate([200]);
+                    }
+                }
+            }
+
+            // Clean up
+            cleanupTouchDrag();
+        }
+
+        function cancelTouchDrag() {
+            cleanupTouchDrag();
+        }
+
+        function cleanupTouchDrag() {
+            // Remove visual feedback
+            if (draggedElement) {
+                draggedElement.classList.remove('dragging');
+            }
+
+            if (dropTarget) {
+                dropTarget.classList.remove('drag-over');
+            }
+
+            // Remove drag preview
+            if (dragPreview) {
+                dragPreview.remove();
+                dragPreview = null;
+            }
+
+            // Reset body styles
+            document.body.style.userSelect = '';
+            document.body.style.webkitUserSelect = '';
+        }
+
+        function resetTouchState() {
+            touchElement = null;
+            draggedElement = null;
+            draggedData = null;
+            dropTarget = null;
+            isTouchDragging = false;
+            initialTouchTarget = null;
         }
 
         // Handle mouse down (start of potential click or drag)
@@ -801,7 +1124,7 @@
             const timeDiff = Date.now() - dragStartTime;
             // If it's a quick click (less than 200ms), treat as click
             if (timeDiff < 200 && !isDragging) {
-                e.preventDefault();
+                // Don't prevent default here, let click handler work
             }
         }
 
@@ -817,6 +1140,7 @@
 
         // Handle drag start
         function handleDragStart(e) {
+            console.log('Drag started on:', this);
             isDragging = true;
             draggedElement = this;
             draggedData = {
@@ -829,15 +1153,12 @@
 
             this.classList.add('dragging');
             e.dataTransfer.effectAllowed = 'move';
-
-            // Delay to allow drag to start properly
-            setTimeout(() => {
-                isDragging = true;
-            }, 50);
+            e.dataTransfer.setData('text/html', this.outerHTML);
         }
 
         // Handle drag end
         function handleDragEnd(e) {
+            console.log('Drag ended');
             this.classList.remove('dragging');
 
             // Remove drag-over class from all elements
@@ -877,11 +1198,16 @@
 
         // Handle drop
         function handleDrop(e) {
+            console.log('Drop event triggered');
+            if (e.preventDefault) {
+                e.preventDefault();
+            }
             if (e.stopPropagation) {
                 e.stopPropagation();
             }
 
-            if (this !== draggedElement) {
+            if (this !== draggedElement && draggedElement) {
+                console.log('Valid drop detected');
                 // Store target data
                 const targetData = {
                     grup: this.getAttribute('grup'),
@@ -890,6 +1216,9 @@
                     content: this.innerHTML,
                     classList: Array.from(this.classList)
                 };
+
+                console.log('From:', draggedData);
+                console.log('To:', targetData);
 
                 // Validate move
                 if (validateMove(draggedData, targetData)) {
@@ -1142,6 +1471,20 @@
         document.addEventListener('DOMContentLoaded', function() {
             initializeDragAndDrop();
             console.log('Parking system initialized with click and drag functionality');
+
+            // Test drag functionality
+            const seats = document.querySelectorAll(DRAGGABLE_SELECTOR);
+            console.log('Found', seats.length, 'draggable seats');
+
+            // Add debug info
+            seats.forEach((seat, index) => {
+                console.log(`Seat ${index}:`, {
+                    grup: seat.getAttribute('grup'),
+                    position: seat.getAttribute('position'),
+                    draggable: seat.draggable,
+                    hasContent: seat.innerHTML.trim().length > 0
+                });
+            });
         });
 
         // Close modal when clicking outside
