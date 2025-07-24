@@ -5,12 +5,15 @@
     <?= $this->include('items/zoom-in-out.php'); ?>
 
     <div class="headline-wrapper">
-        <a href="/" class="back-button">
-            <span class="material-symbols-outlined mb-2">
-                arrow_back
-            </span>
-        </a>
-        <h1 class="headline">Area Stall GR</h1>
+        <div class="d-flex align-items-center gap-2 m-0 p-0">
+            <a href="/" class="back-button">
+                <span class="material-symbols-outlined">
+                    arrow_back
+                </span>
+            </a>
+            <h1 class="headline m-0 p-0">Area Stall GR</h1>
+        </div>
+        <p class="m-0 p-0 text-white fw-semibold"><?= $date ?></p>
     </div>
 
     <div class="main-area" id="main-area">

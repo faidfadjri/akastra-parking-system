@@ -48,13 +48,13 @@ body {
 }
 
 .headline-wrapper {
+  width: 90%;
   position: fixed;
-  top: 5%;
-
+  top: 4%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 0.3em;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .headline-wrapper span {
