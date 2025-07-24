@@ -31,3 +31,5 @@ jobs:
               echo "Repository does not exist, cloning body-paint branch.."
               git clone --branch body-paint git@github.com:faidfadjri/akastra-parking-system.git .
             fi
+
+            php spark cache:clear
