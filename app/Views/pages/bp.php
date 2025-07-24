@@ -204,13 +204,14 @@
                                 </div>
                             </div>
 
-                            <div class="d-flex flex-column ms-2 gap-1">
+                            <div class="d-flex flex-column">
                                 <div class="d-flex gap-4">
                                     <p class="seat-horizontal-label ms-4">Stall Pendempulan</p>
                                     <div class="ms-5"></div>
                                     <p class="seat-horizontal-label ms-4 ps-2">Stall Cuci</p>
                                 </div>
-                                <div class="d-flex gap-1">
+                                <!-- Area Jalan BP -->
+                                <div class="d-flex gap-1 mb-3">
                                     <?php for ($position = 1; $position <= 9; $position++) : ?>
                                         <?php $class = 'seat-default seat-vertical-wide' ?>
                                         <?php if ($position == 5) : ?>
@@ -238,31 +239,35 @@
                                     <?php endfor; ?>
                                     <p class="text-label-vertical">-- Area Finishing --</p>
                                 </div>
+
                                 <!-- Area Jalan Dekat Gudang Bahan -->
-                                <?php for ($grup = 1; $grup <= 2; $grup++) : ?>
-                                    <?php
-                                    $posStart = 1;
-                                    $posEnd = 8;
+                                <div class="mb-3 gap-2">
+                                    <?php for ($grup = 1; $grup <= 2; $grup++) : ?>
+                                        <?php
+                                        $posStart = 1;
+                                        $posEnd = 8;
 
-                                    if ($grup == 2) {
-                                        $posStart = 9;
-                                        $posEnd   = 11;
-                                    }
+                                        if ($grup == 2) {
+                                            $posStart = 9;
+                                            $posEnd   = 11;
+                                        }
 
-                                    ?>
-                                    <div class="d-flex gap-1 z-index-99">
-                                        <?php for ($position = $posStart; $position <= $posEnd; $position++) : ?>
-                                            <?php if ($position == 1) : ?>
-                                                <div class="seat-horizontal"></div>
-                                            <?php else : ?>
-                                                <?php $key = $controller->cari_parkir($grupN, $position); ?>
-                                                <a class="seat seat-horizontal" grup="N" position="<?= $position; ?>" parking-name="Parkiran Bayangan BP" id="<?= rand(time() * $position, time() * 2000); ?>">
-                                                    <?= (!empty($key) || $key === 0) ? $grupN[$key]['model_code'] . " | " . $grupN[$key]['license_plate'] . "<br>" . $grupN[$key]['category'] : "" ?>
-                                                </a>
-                                            <?php endif; ?>
-                                        <?php endfor; ?>
-                                    </div>
-                                <?php endfor; ?>
+                                        ?>
+                                        <div class="d-flex gap-1 mb-1 z-index-99">
+                                            <?php for ($position = $posStart; $position <= $posEnd; $position++) : ?>
+                                                <?php if ($position == 1) : ?>
+                                                    <div class="seat-horizontal"></div>
+                                                <?php else : ?>
+                                                    <?php $key = $controller->cari_parkir($grupN, $position); ?>
+                                                    <a class="seat seat-horizontal" grup="N" position="<?= $position; ?>" parking-name="Parkiran Bayangan BP" id="<?= rand(time() * $position, time() * 2000); ?>">
+                                                        <?= (!empty($key) || $key === 0) ? $grupN[$key]['model_code'] . " | " . $grupN[$key]['license_plate'] . "<br>" . $grupN[$key]['category'] : "" ?>
+                                                    </a>
+                                                <?php endif; ?>
+                                            <?php endfor; ?>
+                                        </div>
+                                    <?php endfor; ?>
+                                </div>
+
                                 <div class="d-flex gap-1 justify-content-between">
                                     <div class="office d-flex gap-1">
                                         <div class="seat-purple seat-horizontal">

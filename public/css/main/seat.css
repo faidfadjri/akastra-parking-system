@@ -10,8 +10,8 @@
 }
 
 .seat-vertical {
-  height: 110px;
-  width: 55px;
+  height: 110px !important;
+  width: 55px !important;
   text-decoration: none;
   font-family: "Lato", sans-serif;
   border-radius: 4px;
@@ -26,8 +26,8 @@
 }
 
 .seat-vertical-short {
-  height: 110px;
-  width: 55px;
+  height: 110px !important;
+  width: 55px !important;
   font-size: 12px;
   text-decoration: none;
   font-family: "Lato", sans-serif;
@@ -41,8 +41,8 @@
 }
 
 .seat-horizontal {
-  height: 55px;
-  width: 120px;
+  height: 55px !important;
+  width: 120px !important;
   text-decoration: none;
   font-family: "Lato", sans-serif;
   border-radius: 4px;
@@ -54,8 +54,8 @@
 }
 
 .seat-horizontal-wide {
-  height: 50px;
-  width: 150px;
+  height: 50px !important;
+  width: 150px !important;
   text-decoration: none;
   font-family: "Lato", sans-serif;
   border-radius: 4px;
