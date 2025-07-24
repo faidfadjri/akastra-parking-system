@@ -635,10 +635,12 @@
                     newPosisi: to.position,
                 },
                 dataType: "json",
-                success: function (_) {
+                success: function (response) {
+                    console.log(response)
                     showMessage('Perpindahan berhasil!', 'success');
                 },
-                error: function () {
+                error: function (err) {
+                    console.log(err)
                     showMessage('Perpindahan tidak diizinkan!', 'error');
                 }
             });
