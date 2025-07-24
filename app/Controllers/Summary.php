@@ -56,6 +56,7 @@ class Summary extends BaseController
             'GRSummary'    => isset($GRSummary) ? $GRSummary : 0,
             'BPSummary'    => isset($BPSummary) ? $BPSummary : 0,
             'AKMSummary'   => isset($AKMSummary) ? $AKMSummary : 0,
+            'lastDate'     => $date,
             'date'         => $date,
             'user'         => $user
         ];
