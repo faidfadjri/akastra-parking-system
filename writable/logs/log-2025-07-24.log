@@ -1,120 +1,30 @@
-CRITICAL - 2025-07-24 11:27:50 --> Undefined variable $lastDateExist
-in APPPATH\Controllers\Parkir.php on line 69.
- 1 APPPATH\Controllers\Parkir.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastDateExist', 'APPPATH\\Controllers\\Parkir.php', 69)
- 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
- 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
- 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
-CRITICAL - 2025-07-24 11:28:07 --> Undefined variable $lastDateExist
-in APPPATH\Controllers\Parkir.php on line 69.
- 1 APPPATH\Controllers\Parkir.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastDateExist', 'APPPATH\\Controllers\\Parkir.php', 69)
- 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
- 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
- 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
-CRITICAL - 2025-07-24 11:29:11 --> Undefined variable $lastDateExist
-in APPPATH\Controllers\Parkir.php on line 69.
- 1 APPPATH\Controllers\Parkir.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastDateExist', 'APPPATH\\Controllers\\Parkir.php', 69)
- 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
- 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
- 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
-CRITICAL - 2025-07-24 11:29:13 --> Undefined variable $lastDateExist
-in APPPATH\Controllers\Parkir.php on line 69.
- 1 APPPATH\Controllers\Parkir.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastDateExist', 'APPPATH\\Controllers\\Parkir.php', 69)
- 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
- 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
- 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
-CRITICAL - 2025-07-24 11:31:24 --> Undefined variable $lastDateExist
-in APPPATH\Controllers\Parkir.php on line 69.
- 1 APPPATH\Controllers\Parkir.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastDateExist', 'APPPATH\\Controllers\\Parkir.php', 69)
- 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
- 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
- 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
-CRITICAL - 2025-07-24 11:31:33 --> Undefined variable $lastDateExist
-in APPPATH\Controllers\Parkir.php on line 69.
- 1 APPPATH\Controllers\Parkir.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastDateExist', 'APPPATH\\Controllers\\Parkir.php', 69)
- 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
- 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
- 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
-CRITICAL - 2025-07-24 11:31:34 --> Undefined variable $lastDateExist
-in APPPATH\Controllers\Parkir.php on line 69.
- 1 APPPATH\Controllers\Parkir.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastDateExist', 'APPPATH\\Controllers\\Parkir.php', 69)
- 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
- 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
- 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
-CRITICAL - 2025-07-24 11:31:35 --> Undefined variable $lastDateExist
-in APPPATH\Controllers\Parkir.php on line 69.
- 1 APPPATH\Controllers\Parkir.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastDateExist', 'APPPATH\\Controllers\\Parkir.php', 69)
- 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
- 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
- 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
-CRITICAL - 2025-07-24 11:31:35 --> Undefined variable $lastDateExist
-in APPPATH\Controllers\Parkir.php on line 69.
- 1 APPPATH\Controllers\Parkir.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastDateExist', 'APPPATH\\Controllers\\Parkir.php', 69)
- 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
- 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
- 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
-CRITICAL - 2025-07-24 11:31:35 --> Undefined variable $lastDateExist
-in APPPATH\Controllers\Parkir.php on line 69.
- 1 APPPATH\Controllers\Parkir.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastDateExist', 'APPPATH\\Controllers\\Parkir.php', 69)
- 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
- 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
- 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
-CRITICAL - 2025-07-24 11:31:35 --> Undefined variable $lastDateExist
-in APPPATH\Controllers\Parkir.php on line 69.
- 1 APPPATH\Controllers\Parkir.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastDateExist', 'APPPATH\\Controllers\\Parkir.php', 69)
- 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
- 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
- 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
-CRITICAL - 2025-07-24 11:31:36 --> Undefined variable $lastDateExist
-in APPPATH\Controllers\Parkir.php on line 69.
- 1 APPPATH\Controllers\Parkir.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastDateExist', 'APPPATH\\Controllers\\Parkir.php', 69)
- 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
- 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
- 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
-CRITICAL - 2025-07-24 11:31:36 --> Undefined variable $lastDateExist
-in APPPATH\Controllers\Parkir.php on line 69.
- 1 APPPATH\Controllers\Parkir.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastDateExist', 'APPPATH\\Controllers\\Parkir.php', 69)
- 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
- 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
- 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
-CRITICAL - 2025-07-24 11:31:36 --> Undefined variable $lastDateExist
-in APPPATH\Controllers\Parkir.php on line 69.
- 1 APPPATH\Controllers\Parkir.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastDateExist', 'APPPATH\\Controllers\\Parkir.php', 69)
- 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
- 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
- 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
-CRITICAL - 2025-07-24 11:31:44 --> Undefined variable $lastDateExist
-in APPPATH\Controllers\Parkir.php on line 74.
- 1 APPPATH\Controllers\Parkir.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastDateExist', 'APPPATH\\Controllers\\Parkir.php', 74)
- 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->index()
- 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
- 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2025-07-24 14:28:10 --> Incorrect DATE value: ''
+CRITICAL - 2025-07-24 14:28:10 --> Incorrect DATE value: ''
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tb_parking`
+WHERE `grup` = \'B\'
+AND `position` = \'1\'
+AND `created_at` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tb_parking`
+WHERE `grup` = \'B\'
+AND `position` = \'1\'
+AND `created_at` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tb_parking`
+WHERE `grup` = \'B\'
+AND `position` = \'1\'
+AND `created_at` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tb_parking`
+WHERE `grup` = :grup:
+AND `position` = :position:
+AND `created_at` = :created_at:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Parkir.php(385): CodeIgniter\Model->__call('get', [])
+ 7 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Parkir->update_posisi()
+ 8 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Parkir))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

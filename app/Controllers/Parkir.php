@@ -364,7 +364,7 @@ class Parkir extends BaseController
         $posisi    = '';
         $newGrup   = '';
         $newPosisi = '';
-        $date      = $_POST['date'];
+        $date = isset($_POST['date']) && !empty($_POST['date']) ? $_POST['date'] : date('Y-m-d');
 
         if (isset($_POST['grup'])) {
             $grup = $_POST['grup'];
