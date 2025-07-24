@@ -1,32 +1,44 @@
 $(document).ready(function () {
-    let dragging = null;
+    let dragging = false;
+    let dragClone = null;
     let offset = { x: 0, y: 0 };
-    let originalParent = null;
+    let originalElement = null;
+    let didMove = false; // ✅ tambahan
 
     const DRAGGABLE_SELECTOR = '.seat-vertical, .seat-horizontal, .seat-vertical-short, .seat-horizontal-wide, .seat-vertical-wide, .seat-horizontal-oven';
 
-    // MOUSE DRAG
+    // MOUSE START
     $(document).on('mousedown', DRAGGABLE_SELECTOR, function (e) {
         e.preventDefault();
-        dragging = $(this);
-        originalParent = dragging.parent();
+        e.stopPropagation();
 
-        const rect = dragging[0].getBoundingClientRect();
+        originalElement = $(this);
+
+        const rect = originalElement[0].getBoundingClientRect();
         offset.x = e.clientX - rect.left;
         offset.y = e.clientY - rect.top;
 
-        dragging.css({
+        dragClone = originalElement.clone();
+        dragClone.css({
             position: 'fixed',
+            left: `${e.clientX - offset.x}px`,
+            top: `${e.clientY - offset.y}px`,
+            width: rect.width,
+            height: rect.height,
             zIndex: 1000,
             pointerEvents: 'none',
-        });
+            opacity: 0.8
+        }).appendTo('body');
 
+        dragging = true;
+        didMove = false; // ✅ reset per drag
         $('body').addClass('noselect');
     });
 
     $(document).on('mousemove', function (e) {
-        if (dragging) {
-            dragging.css({
+        if (dragging && dragClone) {
+            didMove = true; // ✅ flag jika ada gerakan
+            dragClone.css({
                 left: `${e.clientX - offset.x}px`,
                 top: `${e.clientY - offset.y}px`,
             });
@@ -34,64 +46,95 @@ $(document).ready(function () {
     });
 
     $(document).on('mouseup', function (e) {
-        if (dragging) {
+        if (dragging && dragClone) {
             finishDrop(e.clientX, e.clientY);
         }
     });
 
-    // TOUCH DRAG
-    $(document).on('touchstart', DRAGGABLE_SELECTOR, function (e) {
-        dragging = $(this);
-        originalParent = dragging.parent();
-        let touch = e.originalEvent.touches[0];
-
-        const rect = dragging[0].getBoundingClientRect();
-        offset.x = touch.clientX - rect.left;
-        offset.y = touch.clientY - rect.top;
-
-        dragging.css({
-            position: 'fixed',
-            zIndex: 1000,
-            pointerEvents: 'none',
-        });
-
-        document.body.style.overflow = 'hidden';
+    // CLICK CANCELLATION
+    $(document).on('click', DRAGGABLE_SELECTOR, function (e) {
+        if (didMove) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
     });
 
-    $(document).on('touchmove', function (e) {
-        if (dragging) {
-            let touch = e.originalEvent.touches[0];
-            dragging.css({
+    // TOUCH START
+    document.querySelectorAll(DRAGGABLE_SELECTOR).forEach(el => {
+        el.addEventListener('touchstart', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            originalElement = $(this);
+            const touch = e.touches[0];
+            const rect = originalElement[0].getBoundingClientRect();
+            offset.x = touch.clientX - rect.left;
+            offset.y = touch.clientY - rect.top;
+
+            dragClone = originalElement.clone();
+            dragClone.css({
+                position: 'fixed',
+                left: `${touch.clientX - offset.x}px`,
+                top: `${touch.clientY - offset.y}px`,
+                width: rect.width,
+                height: rect.height,
+                zIndex: 1000,
+                pointerEvents: 'none',
+                opacity: 0.8
+            }).appendTo('body');
+
+            dragging = true;
+            didMove = false; // ✅ reset per drag
+            document.body.style.overflow = 'hidden';
+        }, { passive: false });
+    });
+
+    // TOUCH MOVE
+    document.addEventListener('touchmove', function (e) {
+        if (dragging && dragClone) {
+            didMove = true; // ✅ flag jika ada gerakan
+            const touch = e.touches[0];
+            dragClone.css({
                 left: `${touch.clientX - offset.x}px`,
                 top: `${touch.clientY - offset.y}px`,
             });
             e.preventDefault();
         }
-    });
+    }, { passive: false });
 
-    $(document).on('touchend touchcancel', function (e) {
-        if (dragging) {
-            let touch = e.originalEvent.changedTouches[0];
+    // TOUCH END / CANCEL
+    document.addEventListener('touchend', function (e) {
+        if (dragging && dragClone) {
+            const touch = e.changedTouches[0];
             finishDrop(touch.clientX, touch.clientY);
         }
         document.body.style.overflow = '';
-    });
+    }, { passive: false });
 
-    // FINISH DROP LOGIC
+    document.addEventListener('touchcancel', function (e) {
+        if (dragging && dragClone) {
+            const touch = e.changedTouches[0];
+            finishDrop(touch.clientX, touch.clientY);
+        }
+        document.body.style.overflow = '';
+    }, { passive: false });
+
+    // FINISH DROP
     function finishDrop(x, y) {
-        let dropTarget = document.elementFromPoint(x, y);
+        const dropTarget = document.elementFromPoint(x, y);
         if (dropTarget && $(dropTarget).is(DRAGGABLE_SELECTOR)) {
-            let $target = $(dropTarget);
-            let targetId = $target.attr('id');
-            let prevId = dragging.attr('id');
+            const $target = $(dropTarget);
+            const targetId = $target.attr('id');
+            const prevId = originalElement.attr('id');
 
             if ($target.html().trim() === '') {
                 $.ajax({
                     type: "POST",
                     url: "/parkir/update_posisi",
                     data: {
-                        grup: dragging.attr('grup'),
-                        posisi: dragging.attr('position'),
+                        grup: originalElement.attr('grup'),
+                        posisi: originalElement.attr('position'),
                         newGrup: $target.attr('grup'),
                         newPosisi: $target.attr('position'),
                     },
@@ -101,25 +144,21 @@ $(document).ready(function () {
                         $(`#${targetId}`).html(`${response.model_code} | ${response.license_plate}<br>${response.category}`);
                     },
                     error: function () {
-                        location.reload();
+                        // location.reload();
                     }
                 });
             } else {
-                alert('Data sudah terisi');
+                // alert('Data sudah terisi');
             }
         }
 
-        dragging.css({
-            position: 'relative',
-            left: '',
-            top: '',
-            zIndex: '',
-            pointerEvents: '',
-        });
-        dragging = null;
+        dragClone.remove();
+        dragClone = null;
+        dragging = false;
+        didMove = false; // ✅ reset di akhir
         $('body').removeClass('noselect');
     }
 
-    // Prevent user text selection
+    // Style noselect
     $('<style>.noselect { user-select: none; }</style>').appendTo('head');
 });
