@@ -20,6 +20,7 @@ ini_set('display_errors', '1');
  | prefer to not see this, set this value to false.
  */
 defined('SHOW_DEBUG_BACKTRACE') || define('SHOW_DEBUG_BACKTRACE', true);
+date_default_timezone_set('Asia/Jakarta');
 
 /*
  |--------------------------------------------------------------------------

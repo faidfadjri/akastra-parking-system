@@ -52,7 +52,7 @@
 
                     <?php if (isset($user)) : ?>
                         <p class="card-subtitle fs-6 fst-italic text-white" style="font-family: 'Poppins', sans-serif">
-                            last updated by <?= $user; ?> at <?= $date; ?>
+                            last updated by <?= $user; ?> at <?= $lastDate; ?>
                         </p>
                     <?php endif; ?>
                 </div>
@@ -96,7 +96,7 @@
                         <div class="card-body border-0 shadow">
                             <h5 class="card-text text-lato text-muted">GR Vehicle</h5>
                             <h2 class="card-title mb-4 text-lato fw-bold"><?= $exist['GR'] . ' / ' . $capacity['GR']; ?></h2>
-                            <a class="btn-stall mb-2 text-lato" href="<?= $date == date('Y-m-d') ? "/parkir/stall_gr" : "/parkir/stall_gr/" . $date; ?>">
+                            <a class="btn-stall mb-2 text-lato" href="<?= !$date ? "/parkir/stall_gr" : "/parkir/stall_gr/" . $date; ?>">
                                 Lihat Denah
                                 <span class="material-symbols-outlined">
                                     arrow_forward
@@ -143,7 +143,7 @@
                         <div class="card-body border-0 shadow">
                             <h5 class="card-text text-lato text-muted">BP Vehicle</h5>
                             <h2 class="card-title mb-4 text-lato fw-bold"><?= $exist['BP'] . ' / ' . $capacity['BP']; ?></h2>
-                            <a class="btn-stall mb-2 text-lato" href="<?= $date == date('Y-m-d') ? "/parkir/stall_bp" : "/parkir/stall_bp/" . $date; ?>">
+                            <a class="btn-stall mb-2 text-lato" href="<?= !$date ? "/parkir/stall_bp" : "/parkir/stall_bp/" . $date; ?>">
                                 Lihat Denah
                                 <span class="material-symbols-outlined">
                                     arrow_forward
@@ -190,7 +190,7 @@
                             <h5 class="card-text text-lato text-muted">AKM Vehicle</h5>
                             <h2 class="card-title mb-4 text-lato fw-bold"><?= $exist['AKM'] . ' / ' . $capacity['AKM']; ?></h2>
 
-                            <a class="btn-stall mb-2 text-lato" href="<?= $date == date('Y-m-d') ? "/parkir/stall_bp" : "/parkir/stall_bp/" . $date; ?>">
+                            <a class="btn-stall mb-2 text-lato" href="<?= !$date ? "/parkir/stall_bp" : "/parkir/stall_bp/" . $date; ?>">
                                 Lihat Denah
                                 <span class="material-symbols-outlined">
                                     arrow_forward

@@ -1,0 +1,12 @@
+CRITICAL - 2025-07-24 11:23:15 --> Undefined variable $lastDate
+in APPPATH\Views\pages\home.php on line 55.
+ 1 APPPATH\Views\pages\home.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastDate', 'APPPATH\\Views\\pages\\home.php', 55)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/home', [], true)
+ 5 APPPATH\Controllers\Summary.php(62): view('pages/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Summary->index()
+ 7 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Summary))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
