@@ -39,7 +39,7 @@
                             <h1 class="card-title text-white mb-2">Parking Mobile Akastra</h1>
                             <?php if (isset($user)) : ?>
                                 <p class="card-subtitle fs-6 fst-italic text-white" style="font-family: 'Poppins', sans-serif;">
-                                    last updated by <?= $user; ?> at <?= $date; ?>
+                                    last updated by <?= $user; ?> at <?= $lastDate; ?>
                                 </p>
                             <?php endif; ?>
                         </div>

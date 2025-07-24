@@ -56,6 +56,7 @@ class Parkir extends BaseController
         }
 
         $parkirNow        = $this->parkir->select('*')->where('created_at', $date)->get()->getResultArray();
+        $lastDateExist    = $date;
         if (!$parkirNow) {
             $lastDateExist = $this->parkir->select('created_at')->orderBy('created_at', 'DESC')->get()->getFirstRow();
             if ($lastDateExist) {
