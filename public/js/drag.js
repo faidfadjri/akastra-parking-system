@@ -610,8 +610,7 @@
             updateElementClasses(draggedEl, targetData.content);
             updateElementClasses(targetEl, draggedData.content);
 
-            const recordId = draggedEl.id
-            logMove(recordId, draggedData, targetData);
+            updateToServer(draggedData, targetData);
         }
 
         // Update element classes based on content
@@ -624,16 +623,24 @@
             }
         }
 
-        function logMove(recordId, from, to) {
+        function extractDateFromUrl(url = window.location.pathname) {
+            const match = url.match(/\d{4}-\d{2}-\d{2}/);
+            return match ? match[0] : null;
+        }
+
+        function updateToServer(from, to) {
+
+            const date = extractDateFromUrl();
+
             $.ajax({
                 type: "POST",
                 url: "/parkir/update_posisi",
                 data: {
-                    id : recordId,
                     grup: from.grup,
                     posisi: from.position,
                     newGrup: to.grup,
                     newPosisi: to.position,
+                    date : date
                 },
                 dataType: "json",
                 success: function (response) {

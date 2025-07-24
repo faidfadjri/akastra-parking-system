@@ -1,7 +1,0 @@
-CRITICAL - 2023-03-31 09:39:33 --> Undefined array key "date"
-in APPPATH/Controllers/Parkir.php on line 329.
- 1 APPPATH/Controllers/Parkir.php(329): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/CodeIgniter.php(898): App\Controllers\Parkir->get_detail()
- 3 SYSTEMPATH/CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController()
- 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
- 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()

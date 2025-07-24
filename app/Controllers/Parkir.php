@@ -363,7 +363,7 @@ class Parkir extends BaseController
         $posisi    = '';
         $newGrup   = '';
         $newPosisi = '';
-        $date      = date('Y-m-d');
+        $date      = $_POST['date'];
 
         if (isset($_POST['grup'])) {
             $grup = $_POST['grup'];
@@ -381,7 +381,8 @@ class Parkir extends BaseController
             $newPosisi = $_POST['newPosisi'];
         }
 
-        $dataAwal = $this->parkir->select('*')->where('grup', $grup)->where('position', $posisi)->get()->getRowArray();
+        $dataAwal = $this->parkir->select('*')->where('grup', $grup)->where('position', $posisi)->where('created_at', $date)->get()->getRowArray();
+        log_message('error', 'Data Awal: ' . print_r($dataAwal, true));
         $update   = $this->parkir->set('position', $newPosisi)->set('grup', $newGrup)->where('id', $dataAwal['id'])->where('created_at', $date)->update();
         if ($update) {
             return json_encode(array(
