@@ -64,6 +64,7 @@ class Summary extends BaseController
             'BPSummary'    => isset($BPSummary) ? $BPSummary : 0,
             'AKMSummary'   => isset($AKMSummary) ? $AKMSummary : 0,
             'date'         => $date,
+            'lastDate'     => $date,
             'user'         => $user,
             'readyForDeliv' => $readyforDelivery
         ];

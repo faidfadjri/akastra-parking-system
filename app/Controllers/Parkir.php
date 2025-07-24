@@ -61,26 +61,25 @@ class Parkir extends BaseController
             if ($lastDateExist) {
                 $lastDateExist = $lastDateExist->created_at;
                 $parkirNow = $this->parkir->select('*')->where('created_at', $lastDateExist)->get()->getResultArray();
-                $date      = $lastDateExist;
             }
         }
 
         $category         = ['GR', 'BP', 'AKM'];
         foreach ($category as $cat) {
-            $status           = $this->parkir->select('status')->where('category', $cat)->where('DATE(created_at)', $date)->groupBy('status')->get()->getResultArray();
+            $status           = $this->parkir->select('status')->where('category', $cat)->where('DATE(created_at)', $lastDateExist)->groupBy('status')->get()->getResultArray();
             ${$cat . "Summary"} = [];
             foreach ($status as $index => $row) {
                 ${$cat . "Summary"}[$index] = [
                     'status' => $row['status'],
-                    'result' => $this->parkir->select('COUNT(id) as result ')->where('category', $cat)->where('DATE(created_at)', $date)->where('status', $row['status'])->get()->getRowArray()['result']
+                    'result' => $this->parkir->select('COUNT(id) as result ')->where('category', $cat)->where('DATE(created_at)', $lastDateExist)->where('status', $row['status'])->get()->getRowArray()['result']
                 ];
             }
         }
 
         $kapasitas        = $this->kapasitas->select('SUM(capacity) as total, SUM(CASE WHEN category = "GR" THEN capacity END) as GR, SUM(CASE WHEN category = "BP" THEN capacity END) as BP, SUM(CASE WHEN category = "AKM" THEN capacity END) as AKM ')->get()->getRowArray();
-        $exist            = $this->parkir->select('COUNT(CASE WHEN category != 0 THEN id END) as total ,COUNT(CASE WHEN category = "GR" THEN id END) as GR, COUNT(CASE WHEN category = "BP" THEN id END) as BP,COUNT(CASE WHEN category = "AKM" THEN id END) as AKM')->where('DATE(created_at)', $date)->get()->getRowArray();
+        $exist            = $this->parkir->select('COUNT(CASE WHEN category != 0 THEN id END) as total ,COUNT(CASE WHEN category = "GR" THEN id END) as GR, COUNT(CASE WHEN category = "BP" THEN id END) as BP,COUNT(CASE WHEN category = "AKM" THEN id END) as AKM')->where('DATE(created_at)', $lastDateExist)->get()->getRowArray();
 
-        $user             = $this->parkir->select('user')->where('created_at', $date)->get()->getFirstRow();
+        $user             = $this->parkir->select('user')->where('created_at', $lastDateExist)->get()->getFirstRow();
         $user ? $user = $user->user : $user = 'undefined';
 
         $readyforDelivery = $this->parkir
@@ -98,6 +97,7 @@ class Parkir extends BaseController
             'BPSummary'     => $BPSummary,
             'AKMSummary'    => $AKMSummary,
             'date'          => $date,
+            'lastDate'      => $lastDateExist,
             'user'          => $user,
             'readyForDeliv' => $readyforDelivery
         ];
