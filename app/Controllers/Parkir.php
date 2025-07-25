@@ -56,7 +56,7 @@ class Parkir extends BaseController
             $date = $_GET['date'];
         }
 
-
+        $lastDateExist = $date;
 
         #---- get parkir and check is exist or not
         $parkirNow        = $this->parkir->select('*')->where('created_at', $date)->get()->getResultArray();
