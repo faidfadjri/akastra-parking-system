@@ -83,12 +83,13 @@ class Parkir extends BaseController
         $user             = $this->parkir->select('user')->where('created_at', $lastDateExist)->get()->getFirstRow();
         $user ? $user = $user->user : $user = 'undefined';
 
-        $readyforDelivery = $this->parkir
+        $readyForDelivery = $this->parkir
             ->select('*')
             ->where('status', ParkingStatus::READY_FOR_DELIVERY)
-            ->where("(DATE(created_at) = CURDATE() OR DATE(created_at) = CURDATE() - INTERVAL 1 DAY)", null, false)
+            ->where('DATE(created_at) = CURDATE()', null, false)
             ->get()
             ->getResultArray();
+
 
         $data = [
             'lokasi'        => '',
@@ -100,7 +101,7 @@ class Parkir extends BaseController
             'date'          => $date,
             'lastDate'      => $lastDateExist,
             'user'          => $user,
-            'readyForDeliv' => $readyforDelivery
+            'readyForDeliv' => $readyForDelivery
         ];
         return view('pages/home', $data);
     }
@@ -408,7 +409,6 @@ class Parkir extends BaseController
             return $this->validator->getErrors();
         }
 
-
         $nopol = strtoupper($_POST['license_plate']);
         $date  = date('Y-m-d');
 
@@ -422,7 +422,7 @@ class Parkir extends BaseController
             $prevPos  = $vehicle['position'];
             $prevGrup = $vehicle['grup'];
         } else {
-            $result = $this->addDataIfParkingEmpty($date);
+            // $result = $this->addDataIfParkingEmpty($date);
         }
         $data['license_plate'] = $nopol;
 
