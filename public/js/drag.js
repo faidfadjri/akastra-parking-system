@@ -385,10 +385,8 @@ function completeTouchDrag() {
             if (navigator.vibrate) {
                 navigator.vibrate([50, 50, 50]);
             }
-            showMessage('Perpindahan berhasil!', 'success');
         } else {
             console.log('❌ Invalid move attempted');
-            showMessage('Perpindahan tidak diizinkan!', 'error');
             if (navigator.vibrate) {
                 navigator.vibrate([200]);
             }
