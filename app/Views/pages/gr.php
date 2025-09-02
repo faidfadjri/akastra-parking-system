@@ -118,7 +118,7 @@
                                                     R. Sparepart GR
                                                 </div>
                                             </div>
-                                            <div class="office d-flex gap-1" style="margin-right: 345px;">
+                                            <div class="office d-flex gap-1" style="margin-right: 345px; z-index: 99;">
                                                 <div class="seat-office text-white border-0 seat-horizontal">
                                                     Loading / Unloading
                                                 </div>
