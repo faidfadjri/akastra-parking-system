@@ -53,9 +53,9 @@
                                 <span class="material-icons">login</span>
                             </button>
 
-                            <a href="<?= $authorizeURL ?>" class="btn btn-outline-secondary w-100 mt-2 d-flex align-items-center justify-content-center gap-2">
-                                <span class="material-icons">login</span>
-                                <span>Login with Access</span>
+                            <a href="<?= $authorizeURL ?>" class="btn btn-primary w-100 mt-2 d-flex align-items-center justify-content-center gap-2">
+                                <span>Login via</span>
+                                <img src="https://access.akastra.id/icons/logo-white.svg" alt="Access" width="70" height="20">
                             </a>
                         </form>
                     </div>

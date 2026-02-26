@@ -28,31 +28,6 @@ class Parkir extends BaseController
         date_default_timezone_set('Asia/Jakarta');
     }
 
-    public function loginWithApi($username, $password)
-    {
-        $user  = $this->userModel->GetUserByEmail($username);
-        if (!$user) {
-            return redirect()->to(base_url());
-        } else {
-            if ($password != $user['password']) {
-                return redirect()->to(base_url());
-            } else {
-
-
-                $session = session();
-                $user    = [
-                    'logged_in' => true,
-                    'email'     => $username,
-                    'user'      => $username,
-                    'role'      => $user['role']
-                ];
-
-                $session->set('user', $user);
-                return redirect()->to(base_url());
-            }
-        }
-    }
-
     public function index()
     {
 
@@ -307,15 +282,7 @@ class Parkir extends BaseController
                 ));
             } else {
 
-
                 $session = session();
-                $user    = [
-                    'logged_in' => true,
-                    'email'     => $email,
-                    'user'      => $email,
-                    'role'      => $user['role']
-                ];
-
                 $session->set('user', $user);
 
                 return json_encode(array(
@@ -452,7 +419,7 @@ class Parkir extends BaseController
         $date           = date('Y-m-d');
 
         //-- Update user security
-        $this->parkir->set('user', session()->get('user')['user'])->where('created_at', $date)->update();
+        $this->parkir->set('user', session()->get('user')['email'])->where('created_at', $date)->update();
         if ($save) {
             return json_encode(array(
                 'code'          => 200,
@@ -550,7 +517,7 @@ class Parkir extends BaseController
                     $insertBatch ? $retry = false : $retry = true;
 
                     //-- Update user security
-                    $this->parkir->set('user', session()->get('user')['user'])->where('created_at', $date)->update();
+                    $this->parkir->set('user', session()->get('user')['email'])->where('created_at', $date)->update();
                 } catch (Exception $e) {
                     $retry = true;
                     continue;

@@ -880,6 +880,11 @@ function handleModalDataResponse(response, grup, position) {
 function updateToServer(from, to) {
     const date = extractDateFromUrl();
 
+    // Disable user interaction and change cursor to wait
+    document.body.style.pointerEvents = 'none';
+    const originalCursor = document.body.style.cursor;
+    document.body.style.cursor = 'wait';
+
     $.ajax({
         type: "POST",
         url: "/parkir/update_posisi",
@@ -898,6 +903,11 @@ function updateToServer(from, to) {
         error: function (err) {
             console.error('Server update failed:', err);
             showMessage('Perpindahan gagal!', 'error');
+        },
+        complete: function () {
+            // Re-enable user interaction and restore cursor
+            document.body.style.pointerEvents = '';
+            document.body.style.cursor = originalCursor;
         }
     });
 }
