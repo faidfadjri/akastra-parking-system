@@ -13,11 +13,14 @@ jobs:
           fetch-depth: 0
       - name: 📂 Pulling files
         uses: appleboy/ssh-action@master
+        env:
+          APP_ENV: ${{ secrets.ENV }}
         with:
           host: ${{ secrets.PARKING_HOST }}
           username: ${{ secrets.PARKING_USERNAME }}
           key: ${{ secrets.PARKING_PRIVATE_KEY }}
           port: ${{ secrets.PARKING_SSH_PORT }}
+          envs: APP_ENV
           script: |
             mkdir -p ~/akastra/1.1.0
             cd ~/akastra/1.1.0
@@ -30,3 +33,5 @@ jobs:
               echo "Repository does not exist, cloning.."
               git clone git@github.com:faidfadjri/akastra-parking-system.git .
             fi
+
+            echo "$APP_ENV" > .env
