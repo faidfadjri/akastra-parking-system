@@ -84,11 +84,34 @@ class ParkirModel extends Model
         return $builder->get()->getRowArray();
     }
 
+    /**
+     * @deprecated
+     * refactored to UserModel::GetUserByEmail
+     */
     public function _getUserByEmail($email)
     {
         $db      = \Config\Database::connect();
         $builder = $db->table("tb_user");
         $builder->select('*')->where('email', $email);
         return $builder->get()->getRowArray();
+    }
+    
+
+    /**
+     * @deprecated
+     * refactored to UserModel::InsertUser
+     */
+    public function _insertUser($data)
+    {
+
+        $queryData = [
+            'email'     => $data['username'],
+            'password'  => "",
+            'role'      => $data['role_name'],
+        ];
+
+        $db      = \Config\Database::connect();
+        $builder = $db->table("tb_user");
+        return $builder->insert($queryData);
     }
 }

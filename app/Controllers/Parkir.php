@@ -6,17 +6,22 @@ use App\Config\Enum\ParkingStatus;
 use App\Controllers\BaseController;
 use App\Models\KapasitasModel;
 use App\Models\ParkirModel;
+use App\Models\UserModel;
 use Exception;
 
 class Parkir extends BaseController
 {
     protected $parkir;
     protected $kapasitas;
+
+    protected $userModel;
     protected array $statuses;
 
     public function __construct()
     {
         $this->parkir    = new ParkirModel();
+        $this->userModel = new UserModel();
+
         $this->kapasitas = new KapasitasModel();
         $this->statuses = ParkingStatus::all();
 
@@ -25,7 +30,7 @@ class Parkir extends BaseController
 
     public function loginWithApi($username, $password)
     {
-        $user  = $this->parkir->_getUserByEmail($username);
+        $user  = $this->userModel->GetUserByEmail($username);
         if (!$user) {
             return redirect()->to(base_url());
         } else {
@@ -262,11 +267,24 @@ class Parkir extends BaseController
         return view('pages/akm', $data);
     }
 
-    public function login()
+     public function login()
     {
+
+        $oauthURL = env("ACCESS_URL");
+        $oauthClientID = env("ACCESS_CLIENT_ID");
+        $oauthRedirectURL = env("ACCESS_REDIRECT_URI");
+        
+        // Generate a random state and store it in session for later verification
+        $state = bin2hex(random_bytes(16));
+        session()->set('oauth_state', $state);
+
+        $authorizeURL = $oauthURL . "/oauth/authorize?client_id=" . $oauthClientID . "&redirect_uri=" . $oauthRedirectURL . "&response_type=code&scope=openid%20profile%20email&state=" . $state;
+
         $data = [
-            'lokasi' => ''
+            'lokasi'        => '',
+            'authorizeURL'  => $authorizeURL
         ];
+
         return view('pages/login', $data);
     }
 
@@ -275,7 +293,7 @@ class Parkir extends BaseController
         $email = $_POST['email'];
         $pass  = $_POST['password'];
 
-        $user  = $this->parkir->_getUserByEmail($email);
+        $user  = $this->userModel->GetUserByEmail($email);
         if (!$user) {
             return json_encode(array(
                 'message'  => 'Email tidak ditemukan',

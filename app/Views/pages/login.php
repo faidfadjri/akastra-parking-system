@@ -52,6 +52,11 @@
                                 <span>Login</span>
                                 <span class="material-icons">login</span>
                             </button>
+
+                            <a href="<?= $authorizeURL ?>" class="btn btn-outline-secondary w-100 mt-2 d-flex align-items-center justify-content-center gap-2">
+                                <span class="material-icons">login</span>
+                                <span>Login with Access</span>
+                            </a>
                         </form>
                     </div>
                 </div>

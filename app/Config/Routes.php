@@ -36,40 +36,51 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-$routes->get('loginWithApi/(:segment)/(:segment)', 'Parkir::loginWithApi/$1/$2');
+// --------------------------------------------------------------------
+// OAUTH : Akastra Access
+// -------------------------------------------------------------------- 
+$routes->group('oauth', function($routes){
+    $routes->get('callback', 'Oauth::callback');
+});
+
+// --------------------------------------------------------------------
+// Core Application Routes
+// --------------------------------------------------------------------
 $routes->get('/', 'Parkir::index', ['filter' => 'login']);
 $routes->get('summary', 'Summary::index');
+$routes->post('visit', 'Parkir::visit');
+
+// --------------------------------------------------------------------
+// Authentication Routes
+// --------------------------------------------------------------------
 $routes->get('login', 'Parkir::login');
 $routes->get('logout', 'Parkir::logout');
 $routes->post('authentication', 'Parkir::authentication');
 
-$routes->post('visit', 'Parkir::visit');
+// --------------------------------------------------------------------
+// Parking Management Routes (Protected)
+// --------------------------------------------------------------------
+$routes->group('parkir', ['filter' => 'login'], static function ($routes) {
+    
+    // 1. Parking Areas Views (Supports optional Date & SeatID parameters)
+    $areas = ['depan', 'stall_bp', 'stall_gr', 'akm'];
+    
+    foreach ($areas as $area) {
+        $routes->get($area,                               "Parkir::{$area}");
+        $routes->get("{$area}/(:segment)",                "Parkir::{$area}/$1");
+        $routes->get("{$area}/(:segment)/(:segment)",     "Parkir::{$area}/$1/$2");
+    }
 
-$routes->group('parkir', ['filter' => 'login'], function ($routes) {
-    $routes->get('depan', 'Parkir::depan');
-    $routes->get('stall_bp', 'Parkir::stall_bp');
-    $routes->get('stall_gr', 'Parkir::stall_gr');
-    $routes->get('akm', 'Parkir::akm');
-
-    $routes->get('depan/(:segment)', 'Parkir::depan/$1');
-    $routes->get('stall_bp/(:segment)', 'Parkir::stall_bp/$1');
-    $routes->get('stall_gr/(:segment)', 'Parkir::stall_gr/$1');
-    $routes->get('akm/(:segment)', 'Parkir::akm/$1');
-
-    $routes->get('depan/(:segment)/(:segment)', 'Parkir::depan/$1/$2');
-    $routes->get('stall_bp/(:segment)/(:segment)', 'Parkir::stall_bp/$1/$2');
-    $routes->get('stall_gr/(:segment)/(:segment)', 'Parkir::stall_gr/$1/$2');
-    $routes->get('akm/(:segment)/(:segment)', 'Parkir::akm/$1/$2');
-
-    //----- Non Pages Routes
+    // 2. Data Retrieval Actions (AJAX)
     $routes->get('get_history', 'Parkir::get_history');
-    $routes->post('update_posisi', 'Parkir::update_posisi');
-    $routes->post('tambah_parkir', 'Parkir::tambah_parkir');
-    $routes->post('delete', 'Parkir::delete_parkir');
     $routes->post('get_detail', 'Parkir::get_detail');
     $routes->post('search_car', 'Parkir::search_car');
 
+    // 3. Database Modification Actions
+    $routes->post('tambah_parkir', 'Parkir::tambah_parkir');
     $routes->post('update_parkir', 'Parkir::update_parkir');
+    $routes->post('update_posisi', 'Parkir::update_posisi');
+    $routes->post('delete',        'Parkir::delete_parkir');
 });
 
 
