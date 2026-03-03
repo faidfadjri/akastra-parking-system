@@ -12,7 +12,11 @@ class Oauth extends BaseController
 
     public function __construct()
     {
-        $this->oauthBaseURL = env('ACCESS_URL');
+        $this->oauthBaseURL = rtrim(trim(env('ACCESS_INTERNAL_URL')), '/');
+
+        if (empty($this->oauthBaseURL)) {
+            die('ACCESS_INTERNAL_URL not set');
+        }
 
         $this->userModel    = new UserModel();
 
@@ -90,7 +94,6 @@ class Oauth extends BaseController
             }
 
             return redirect()->to('/login');
-
         } catch (\Throwable $e) {
 
             echo "<pre>";
