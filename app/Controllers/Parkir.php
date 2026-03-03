@@ -242,13 +242,13 @@ class Parkir extends BaseController
         return view('pages/akm', $data);
     }
 
-     public function login()
+    public function login()
     {
 
-        $oauthURL = env("ACCESS_URL");
+        $oauthURL = env("ACCESS_PUBLIC_URL");
         $oauthClientID = env("ACCESS_CLIENT_ID");
         $oauthRedirectURL = env("ACCESS_REDIRECT_URI");
-        
+
         // Generate a random state and store it in session for later verification
         $state = bin2hex(random_bytes(16));
         session()->set('oauth_state', $state);
