@@ -32,15 +32,20 @@
                         <p class="subtitle">Sistem Manajemen Parkir Terpadu</p>
                     </div>
                 </div>
-                <div class="d-flex gap-2 mt-3 mt-md-0">
-                    <button class="btn-icon btn-history shadow-sm" title="History" data-bs-toggle="modal" data-bs-target="#historyModal">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
-                    </button>
-                    <a class="btn-icon btn-exit shadow-sm" href="/logout" title="Logout">
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    </a>
-                    <div class="btn-icon btn-profile shadow-sm">
-                        <i class="fa-solid fa-user"></i>
+                <div class="d-flex gap-5 mt-3 mt-md-0">
+                    <div class="d-flex align-items-center gap-2">
+                        <button class="btn-icon btn-history shadow-sm" title="History" data-bs-toggle="modal" data-bs-target="#historyModal">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </button>
+                        <a class="btn-icon btn-exit shadow-sm" href="/logout" title="Logout">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="btn-icon btn-profile shadow-sm">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <span class="fw-semibold"><?= ucfirst($user) ?></span>
                     </div>
                 </div>
             </div>
